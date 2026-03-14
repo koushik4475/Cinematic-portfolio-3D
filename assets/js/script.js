@@ -483,15 +483,31 @@ document.getElementById('master-robot-orb').addEventListener('click', () => {
     Tawk_API.toggle();
 });
 
-/* AI Pet Cinematic Blink (Every 5s) */
+/* AI Pet Cinematic Interaction (Creative Evolution) */
 document.addEventListener('DOMContentLoaded', () => {
-    const eyelids = document.querySelector('.pet-eyelids');
-    if (!eyelids) return;
+    const orb = document.querySelector('#master-robot-orb.ai-pet');
+    if (!orb) return;
     
-    setInterval(() => {
+    const eyelids = orb.querySelector('.pet-eyelids');
+    
+    // Randomized Iris Blink
+    const triggerBlink = () => {
         eyelids.classList.add('blink');
-        setTimeout(() => eyelids.classList.remove('blink'), 300);
-    }, 5000);
+        setTimeout(() => eyelids.classList.remove('blink'), 400); // Match CSS transiton
+        
+        // Random interval between 4-10 seconds
+        const nextBlink = Math.random() * 6000 + 4000;
+        setTimeout(triggerBlink, nextBlink);
+    };
+    
+    // Start the cycle
+    setTimeout(triggerBlink, 3000);
+    
+    // Professional Hover Reaction
+    orb.addEventListener('mouseenter', () => {
+        // We could add sound effects here if requested, 
+        // for now we just let CSS handle the visual intensification
+    });
 });
 
 /* ============================================

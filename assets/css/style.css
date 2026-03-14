@@ -2055,58 +2055,108 @@ header .navbar ul li a.active {
   100% { transform: translateY(0) scale(1.1); filter: brightness(1); }
 }
 
-/* Master Robot Orb — Ultra Realistic AI Pet */
+/* Master Robot Orb — Ultra Realistic AI Pet (Creative Evolution) */
 #master-robot-orb.ai-pet {
   position: fixed !important;
   bottom: 3.5rem !important;
   right: 3rem !important;
-  width: 8rem !important;
-  height: 8rem !important;
+  width: 8.5rem !important;
+  height: 8.5rem !important;
   background: 
     url('../images/ai-pet.png') center/cover no-repeat,
     radial-gradient(circle at 35% 35%, #2a1a4a, #050510) !important;
-  border: 2px solid rgba(0, 229, 255, 0.4) !important;
+  border: 1px solid rgba(0, 229, 255, 0.3) !important;
   border-radius: 50% !important;
   cursor: pointer !important;
   z-index: 1001 !important;
   box-shadow: 
-    0 0 40px rgba(0, 229, 255, 0.3),
-    inset 0 0 25px rgba(0, 229, 255, 0.2) !important;
+    0 0 30px rgba(0, 229, 255, 0.2),
+    inset 0 0 20px rgba(0, 229, 255, 0.1) !important;
   display: flex !important;
   align-items: center;
   justify-content: center;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1) !important;
   overflow: hidden;
+  animation: neuralPulse 8s ease-in-out infinite;
+}
+
+@keyframes neuralPulse {
+  0%, 100% { transform: scale(1); filter: brightness(1) drop-shadow(0 0 5px rgba(0, 242, 255, 0.2)); }
+  50% { transform: scale(1.03); filter: brightness(1.1) drop-shadow(0 0 20px rgba(0, 242, 255, 0.4)); }
+}
+
+#master-robot-orb.ai-pet::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, transparent, rgba(0, 229, 255, 0.4), transparent 30%);
+  animation: orbSpin 4s linear infinite;
+  z-index: -1;
 }
 
 #master-robot-orb.ai-pet:hover {
-  transform: scale(1.1) rotate(5deg) !important;
-  box-shadow: 0 0 60px rgba(0, 229, 255, 0.6) !important;
-  border-color: rgba(0, 229, 255, 0.8) !important;
+  transform: scale(1.12) !important;
+  box-shadow: 0 0 60px rgba(0, 255, 255, 0.7), inset 0 0 30px rgba(0, 255, 255, 0.3) !important;
+  border-color: rgba(0, 255, 255, 0.8) !important;
+}
+
+.holographic-scanner {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to bottom, transparent, rgba(0, 242, 255, 0.6), transparent);
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+  z-index: 3;
+  pointer-events: none;
+  animation: scanSweep 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes scanSweep {
+  0% { top: -50%; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { top: 120%; opacity: 0; }
+}
+
+.pet-status-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 242, 255, 0.1), transparent 70%);
+  z-index: 2;
+  animation: statusPulse 4s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
 }
 
 .pet-eyelids {
   position: absolute;
-  top: 40%;
-  left: 0;
-  width: 100%;
-  height: 20%;
+  inset: 0;
   background: #000;
+  z-index: 10;
   opacity: 0;
-  z-index: 2;
-  transition: opacity 0.1s ease;
+  clip-path: circle(100% at 50% 50%);
+  transition: clip-path 0.4s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.1s ease;
 }
 
 .pet-eyelids.blink {
-  animation: petBlinkAnim 0.3s ease-in-out;
+  opacity: 1;
+  clip-path: circle(0% at 50% 50%);
+  animation: irisBlink 0.4s ease-in-out;
 }
 
-@keyframes petBlinkAnim {
-  0%, 100% { height: 0; opacity: 0; }
-  50% { height: 35%; opacity: 1; }
+@keyframes irisBlink {
+  0% { clip-path: circle(100% at 50% 50%); opacity: 0; }
+  50% { clip-path: circle(0% at 50% 50%); opacity: 1; }
+  100% { clip-path: circle(100% at 50% 50%); opacity: 0; }
 }
 
-/* Old Robot Styles Cleanup */
+/* Old Robot Styles Cleanup — Remaining references removed */
 #master-robot-orb.robot-head {
   position: fixed !important;
   bottom: 3.5rem !important;
