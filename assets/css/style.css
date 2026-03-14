@@ -2060,28 +2060,30 @@ header .navbar ul li a.active {
 #chat-launcher i {
   position: relative;
   z-index: 1;
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   color: #fff;
-  filter: drop-shadow(0 0 12px rgba(139, 92, 246, 0.8));
-  animation: chatPulse 2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 15px rgba(139, 92, 246, 1));
+  animation: robotGlow 3s ease-in-out infinite alternate;
 }
 
-@keyframes chatPulse {
-  from {
-    transform: scale(1);
-    filter: drop-shadow(0 0 12px rgba(139, 92, 246, 0.8));
+@keyframes robotGlow {
+  0% {
+    transform: scale(1) translateZ(0);
+    filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.8));
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
   }
-  to {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 20px rgba(244, 114, 182, 0.9));
+  100% {
+    transform: scale(1.15) translateZ(30px);
+    filter: drop-shadow(0 0 25px rgba(244, 114, 182, 1));
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(0, 229, 255, 0.5);
   }
 }
 
 #chat-launcher:hover {
-  transform: scale(1.15) rotate(10deg);
+  transform: scale(1.2) rotate(5deg) translateY(-10px);
   box-shadow: 
-    0 20px 50px rgba(139, 92, 246, 0.5),
-    0 0 80px rgba(244, 114, 182, 0.3);
+    0 25px 60px rgba(139, 92, 246, 0.6),
+    0 0 100px rgba(244, 114, 182, 0.4);
 }
 
 @keyframes orbSpin {
@@ -2092,9 +2094,9 @@ header .navbar ul li a.active {
   to { transform: translateY(-5px); }
 }
 
-@keyframes chatPulse {
+@keyframes robotGlow {
   from { transform: scale(1); }
-  to { transform: scale(1.1); }
+  to { transform: scale(1.15); }
 }
 
 @media (max-width: 768px) {
