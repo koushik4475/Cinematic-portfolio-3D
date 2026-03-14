@@ -2055,7 +2055,58 @@ header .navbar ul li a.active {
   100% { transform: translateY(0) scale(1.1); filter: brightness(1); }
 }
 
-/* Master Robot Head — The Orb is the face */
+/* Master Robot Orb — Ultra Realistic AI Pet */
+#master-robot-orb.ai-pet {
+  position: fixed !important;
+  bottom: 3.5rem !important;
+  right: 3rem !important;
+  width: 8rem !important;
+  height: 8rem !important;
+  background: 
+    url('../images/ai-pet.png') center/cover no-repeat,
+    radial-gradient(circle at 35% 35%, #2a1a4a, #050510) !important;
+  border: 2px solid rgba(0, 229, 255, 0.4) !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  z-index: 1001 !important;
+  box-shadow: 
+    0 0 40px rgba(0, 229, 255, 0.3),
+    inset 0 0 25px rgba(0, 229, 255, 0.2) !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  overflow: hidden;
+}
+
+#master-robot-orb.ai-pet:hover {
+  transform: scale(1.1) rotate(5deg) !important;
+  box-shadow: 0 0 60px rgba(0, 229, 255, 0.6) !important;
+  border-color: rgba(0, 229, 255, 0.8) !important;
+}
+
+.pet-eyelids {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: #000;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.1s ease;
+}
+
+.pet-eyelids.blink {
+  animation: petBlinkAnim 0.3s ease-in-out;
+}
+
+@keyframes petBlinkAnim {
+  0%, 100% { height: 0; opacity: 0; }
+  50% { height: 35%; opacity: 1; }
+}
+
+/* Old Robot Styles Cleanup */
 #master-robot-orb.robot-head {
   position: fixed !important;
   bottom: 3.5rem !important;
