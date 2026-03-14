@@ -479,7 +479,7 @@ Tawk_API.onLoad = function () {
     Tawk_API.hideWidget();
 };
 
-document.getElementById('chat-launcher').addEventListener('click', () => {
+document.getElementById('master-robot-orb').addEventListener('click', () => {
     Tawk_API.toggle();
 });
 

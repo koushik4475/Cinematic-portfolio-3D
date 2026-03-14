@@ -2056,7 +2056,7 @@ header .navbar ul li a.active {
 }
 
 /* Master Robot Head — The Orb is the face */
-#chat-launcher.robot-head {
+#master-robot-orb.robot-head {
   position: fixed !important;
   bottom: 3.5rem !important;
   right: 3rem !important;
@@ -2066,7 +2066,7 @@ header .navbar ul li a.active {
   border: 2px solid rgba(139, 92, 246, 0.8) !important;
   border-radius: 50% !important;
   cursor: pointer !important;
-  z-index: 1000 !important;
+  z-index: 1001 !important;
   box-shadow: 
     0 0 40px rgba(139, 92, 246, 0.5),
     inset 0 0 25px rgba(139, 92, 246, 0.3) !important;
@@ -2077,6 +2077,10 @@ header .navbar ul li a.active {
   transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1) !important;
   perspective: 1000px !important;
   transform-style: preserve-3d !important;
+}
+
+#master-robot-orb.robot-head:hover {
+  box-shadow: 0 0 60px rgba(139, 92, 246, 0.8) !important;
 }
 
 .robot-eyes {
@@ -2103,7 +2107,7 @@ header .navbar ul li a.active {
   96% { transform: scaleY(0.05); }
 }
 
-#chat-launcher.robot-head::after {
+#master-robot-orb.robot-head::after {
   content: '';
   position: absolute;
   bottom: 1.8rem;
@@ -2115,10 +2119,6 @@ header .navbar ul li a.active {
   transition: all 0.3s ease;
 }
 
-#chat-launcher.robot-head:hover {
-  box-shadow: 0 0 60px rgba(139, 92, 246, 0.8);
-}
-
 /* Consolidated Robot Glow */
 @keyframes robotGlow {
   0% { transform: scale(1); filter: brightness(1) drop-shadow(0 0 10px rgba(139, 92, 246, 0.5)); }
@@ -2126,11 +2126,11 @@ header .navbar ul li a.active {
 }
 
 @media (max-width: 768px) {
-  #scroll-top, #chat-launcher {
-    bottom: 2rem;
+  #scroll-top, #master-robot-orb {
+    bottom: 2rem !important;
   }
-  #scroll-top { left: 2rem; }
-  #chat-launcher { right: 2rem; }
+  #scroll-top { left: 2rem !important; }
+  #master-robot-orb { right: 2rem !important; }
 }
 
 /* ============================================
