@@ -1,0 +1,103 @@
+[
+  {
+    "name": "OpenAgent — Hybrid AI",
+    "desc": "A next-gen AI assistant combining cloud intelligence (Groq Llama 3.3 70B) with local privacy (Ollama Phi-3). Features web search, file parsing, OCR vision, RAG memory, and a cyberpunk UI.",
+    "image": "openagent-ai-hybrid-assistant",
+    "category": "AI&ML",
+    "imageExt": "jpg",
+    "links": {
+      "view": "https://huggingface.co/spaces/koushik4475/openagent",
+      "code": "https://github.com/koushik4475/open-agent"
+    }
+  },
+  {
+    "name": "Travel GO-INDIA",
+    "desc": "Discover the vibrant tapestry of India through an immersive travel experience website.",
+    "image": "travel-go-india-project-screenshot",
+    "category": "web",
+    "links": {
+      "view": "https://gooindia.netlify.app",
+      "code": "https://github.com/koushik4475/gooindia-.git"
+    }
+  },
+  {
+    "name": "Android Cipher",
+    "desc": "A cipher code generator and decrypter using blowfish algorithm compatible with any versions of Android and iOS operating system.",
+    "image": "android-cipher-app-screenshot",
+    "category": "app",
+    "links": {
+      "view": "https://github.com/koushik4475/android-cipher?tab=readme-ov-file",
+      "code": "https://github.com/koushik4475/android-cipher.git"
+    }
+  },
+  {
+    "name": "Dynamic Showcase",
+    "desc": "Next-level responsive portfolio using gyroscopic movement tracking system with React/JS, SCSS, CSS.",
+    "image": "dynamic-showcase-portfolio-screenshot",
+    "category": "web",
+    "links": {
+      "view": "https://koushikhy.netlify.app",
+      "code": ""
+    }
+  },
+  {
+    "name": "Focus Guard",
+    "desc": "A sophisticated system designed to detect distraction using face algorithm with real-time AI & ML.",
+    "image": "focus-guard-ai-project-screenshot",
+    "category": "AI&ML",
+    "links": {
+      "view": "https://github.com/koushik4475/focus-guard-.git",
+      "code": "https://github.com/koushik4475/focus-guard-.git"
+    }
+  },
+  {
+    "name": "Alarm Clock App",
+    "desc": "A vintage-themed alarm clock app built using Kotlin, Java, SDK, Gradle, XML & JDK supporting Android and iOS.",
+    "image": "alarm-clock-android-app-screenshot",
+    "category": "app",
+    "links": {
+      "view": "https://github.com/koushik4475/ALARM-HY_KOUSHIK.git",
+      "code": "https://github.com/koushik4475/ALARM-HY_KOUSHIK.git"
+    }
+  },
+  {
+    "name": "To-Do List App",
+    "desc": "A task management application built using Kotlin, Java, SDK, Gradle, JDK, XML supporting Android and iOS.",
+    "image": "todo-app-kotlin-screenshot",
+    "category": "to-do",
+    "links": {
+      "view": "https://github.com/koushik4475/TO-DO-APPLICATION-HY_KOUSHIK.git",
+      "code": "https://github.com/koushik4475/TO-DO-APPLICATION-HY_KOUSHIK.git"
+    }
+  },
+  {
+    "name": "Visiting Profile",
+    "desc": "An interactive digital visiting card web application built with HTML, CSS & JavaScript.",
+    "image": "visiting-profile-web-app-screenshot",
+    "category": "application",
+    "links": {
+      "view": "https://hykoushik.netlify.app",
+      "code": "https://github.com/koushik4475/interactive-visiting-card-.git"
+    }
+  },
+  {
+    "name": "Smart City Waste Management",
+    "desc": "A smart city waste management system with AI assistant using route optimisation — developed in a 24-hour hackathon.",
+    "image": "smart-city-waste-management-screenshot",
+    "category": "web",
+    "links": {
+      "view": "",
+      "code": "https://github.com/koushik4475/focus-guard-.git"
+    }
+  },
+  {
+    "name": "Cyber Calculator",
+    "desc": "A sleek, cyberpunk-themed calculator built with JavaScript, CSS and SCSS.",
+    "image": "cyber-calculator-project-screenshot",
+    "category": "web",
+    "links": {
+      "view": "https://cybercal.netlify.app",
+      "code": "https://github.com/koushik4475/calculator.git"
+    }
+  }
+]
