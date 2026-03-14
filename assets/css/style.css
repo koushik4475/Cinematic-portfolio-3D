@@ -2057,26 +2057,26 @@ header .navbar ul li a.active {
 
 /* Master Robot Head — The Orb is the face */
 #chat-launcher.robot-head {
-  position: fixed;
-  bottom: 3.5rem;
-  right: 3rem;
-  width: 7rem;
-  height: 7rem;
-  background: radial-gradient(circle at 35% 35%, #2a1a4a, #050510);
-  border: 2px solid rgba(139, 92, 246, 0.8);
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 1000;
+  position: fixed !important;
+  bottom: 3.5rem !important;
+  right: 3rem !important;
+  width: 7.5rem !important;
+  height: 7.5rem !important;
+  background: radial-gradient(circle at 35% 35%, #2a1a4a, #050510) !important;
+  border: 2px solid rgba(139, 92, 246, 0.8) !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  z-index: 1000 !important;
   box-shadow: 
     0 0 40px rgba(139, 92, 246, 0.5),
-    inset 0 0 25px rgba(139, 92, 246, 0.3);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1);
-  perspective: 1000px;
-  transform-style: preserve-3d;
+    inset 0 0 25px rgba(139, 92, 246, 0.3) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  perspective: 1000px !important;
+  transform-style: preserve-3d !important;
 }
 
 .robot-eyes {
