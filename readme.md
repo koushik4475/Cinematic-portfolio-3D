@@ -1,6 +1,7 @@
 # 🌌 Cinematic Portfolio — Koushik HY
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/06a9675e-088a-4125-852e-4e70149ce97d/deploy-status)](https://app.netlify.com/sites/koushikhy/deploys)
+[![GitHub Pages](https://github.com/koushik4475/Cinematic-portfolio-3D/actions/workflows/gh-pages.yml/badge.svg)](https://koushik4475.github.io/Cinematic-portfolio-3D/)
 
 A premium, high-fidelity personal portfolio featuring immersive **Three.js** 3D visuals, studio-grade lighting, and cinematic "glassmorphism" user interfaces. Designed for impact and performance.
 
