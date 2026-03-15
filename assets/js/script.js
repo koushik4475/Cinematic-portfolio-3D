@@ -482,6 +482,11 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 Tawk_API.onLoad = function () {
     // Hide the default Tawk bubbles to use our cinematic robo-pet
     Tawk_API.hideWidget();
+    Tawk_API.onStatusChange = function (status) {
+        if (status === 'online' || status === 'away') {
+            Tawk_API.hideWidget();
+        }
+    };
     
     // Set custom personality
     Tawk_API.setAttributes({

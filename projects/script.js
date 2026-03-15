@@ -119,7 +119,7 @@ document.addEventListener('visibilitychange', function () {
 });
 
 async function getProjects() {
-    const response = await fetch("/projects/projects.json");
+    const response = await fetch("./projects.json");
     return await response.json();
 }
 
