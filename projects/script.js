@@ -119,6 +119,7 @@ document.addEventListener('visibilitychange', function () {
 });
 
 async function getProjects() {
+    // Truly relative path for projects.json
     const response = await fetch("./projects.json");
     return await response.json();
 }
@@ -133,7 +134,7 @@ function showProjects(projects) {
         <div class="grid-item ${project.category}">
             <div class="box tilt">
                 <div class="image">
-                    <img draggable="false" src="/assets/images/projects/${project.image}.${ext}" alt="${project.name}" loading="lazy" />
+                    <img draggable="false" src="../assets/images/projects/${project.image}.${ext}" alt="${project.name}" loading="lazy" />
                 </div>
                 <div class="content">
                     <h3>${project.name}</h3>

@@ -339,7 +339,7 @@ var typed = new Typed(".typing-text", {
    ============================================ */
 async function fetchData(type = "skills") {
     let response = type === "skills"
-        ? await fetch("skills.json")
+        ? await fetch("./skills.json")
         : await fetch("./projects/projects.json");
     return await response.json();
 }
@@ -379,7 +379,7 @@ function showProjects(projects) {
         html += `
         <div class="box">
             <div class="image">
-                <img draggable="false" src="/assets/images/projects/${project.image}.${ext}" alt="${project.name} - project by Koushik HY" loading="lazy" />
+                <img draggable="false" src="./assets/images/projects/${project.image}.${ext}" alt="${project.name} - project by Koushik HY" loading="lazy" />
             </div>
             <div class="content">
                 <div class="tag">
@@ -479,6 +479,20 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     s0.parentNode.insertBefore(s1, s0);
 })();
 
+// Force hide Tawk.to bubble via CSS as a robust backup
+(function() {
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .tawk-min-container, .tawk-badge, .tawk-button { 
+            display: none !important; 
+            visibility: hidden !important; 
+            opacity: 0 !important; 
+            pointer-events: none !important;
+        }
+    `;
+    document.head.appendChild(style);
+})();
+
 Tawk_API.onLoad = function () {
     // Hide the default Tawk bubbles to use our cinematic robo-pet
     Tawk_API.hideWidget();
@@ -493,7 +507,6 @@ Tawk_API.onLoad = function () {
         'name': 'Visitor',
         'hash': 'hash_value' // Optional security
     }, function(error){});
-
     // We can't change the internal theme easily via API, 
     // but we can influence the 'presence' text if the dashboard allows.
 };
