@@ -25,7 +25,7 @@
   <meta property="og:description"
     content="Official portfolio of Koushik HY, a passionate Full-Stack Web and Android App Developer from Karnataka, India. Explore my projects, skills, and experience in web design, app development, and more." />
   <meta property="og:image"
-    content="https://koushikhy.netlify.app/assets/images/koushik-hy-fullstack-developer-hero.png" />
+    content="./assets/images/koushik-hy-fullstack-developer-hero.png" />
   <meta property="og:url" content="https://koushikhy.netlify.app/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Koushik HY's Portfolio" />
@@ -38,7 +38,7 @@
   <meta name="twitter:description"
     content="Explore the portfolio of Koushik HY, a Full-Stack Web and Android App Developer. View projects, skills, and experience.">
   <meta name="twitter:image"
-    content="https://koushikhy.netlify.app/assets/images/koushik-hy-fullstack-developer-hero.png">
+    content="./assets/images/koushik-hy-fullstack-developer-hero.png">
 
   <!-- Schema.org Markup -->
   <script type="application/ld+json">
@@ -47,7 +47,7 @@
       "@type": "Person",
       "name": "Koushik HY",
       "url": "https://koushikhy.netlify.app/",
-      "image": "https://koushikhy.netlify.app/assets/images/koushik-hy-professional-headshot.jpg",
+      "image": "./assets/images/koushik-hy-professional-headshot.jpg",
       "sameAs": [
         "https://www.linkedin.com/in/koushik-hy-3740a125b",
         "https://github.com/koushik4475",
@@ -80,6 +80,15 @@
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8878096861679129"
     crossorigin="anonymous"></script>
+  <!-- Force hide Tawk.to via CSS -->
+  <style>
+    .tawk-min-container, .tawk-badge, .tawk-button, #tawk-tooltip { 
+        display: none !important; 
+        visibility: hidden !important; 
+        opacity: 0 !important; 
+        pointer-events: none !important;
+    }
+  </style>
 </head>
 
 <body>
