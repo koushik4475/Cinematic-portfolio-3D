@@ -2170,7 +2170,13 @@ header .navbar ul li a.active {
   #scroll-top, .robo-pet {
     bottom: 1.5rem !important;
   }
-  #scroll-top { left: 1.5rem !important; }
+  #scroll-top {
+    left: 1.5rem !important;
+    width: 4.4rem !important;
+    height: 4.4rem !important;
+    font-size: 1.8rem !important;
+    border-width: 3px !important;
+  }
   .robo-pet { 
     right: 1.5rem !important;
     transform: scale(0.65);
@@ -2185,7 +2191,10 @@ header .navbar ul li a.active {
    .tawk-chat-open (set on robo-pet click). This
    applies before Tawk's JS runs, so nothing flashes.
    ============================================ */
+body:not(.tawk-chat-open) iframe[src*="tawk.to"],
+body:not(.tawk-chat-open) iframe[src*="embed.tawk"],
 body:not(.tawk-chat-open) iframe[title="chat widget"],
+body:not(.tawk-chat-open) iframe[title*="chat"],
 body:not(.tawk-chat-open) div[id^="tawk-"],
 body:not(.tawk-chat-open) .tawk-min-container,
 body:not(.tawk-chat-open) .tawk-button,
