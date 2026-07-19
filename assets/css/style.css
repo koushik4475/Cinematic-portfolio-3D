@@ -2162,10 +2162,28 @@ header .navbar ul li a.active {
 }
 
 /* ============================================
+   TAWK.TO MASK — hide the default bubble & the
+   "We Are Here" attention grabber from first paint.
+   Tawk UI is only revealed while <body> carries
+   .tawk-chat-open (set on robo-pet click). This
+   applies before Tawk's JS runs, so nothing flashes.
+   ============================================ */
+body:not(.tawk-chat-open) iframe[title="chat widget"],
+body:not(.tawk-chat-open) div[id^="tawk-"],
+body:not(.tawk-chat-open) .tawk-min-container,
+body:not(.tawk-chat-open) .tawk-button,
+body:not(.tawk-chat-open) .tawk-badge {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* ============================================
    TAWK.TO THEME CORRECTION
    ============================================ */
 /* Target the Tawk.to messenger container to shift Green -> Cyan */
-div[id^="tawk-"] iframe, 
+div[id^="tawk-"] iframe,
 .tawk-messenger,
 iframe[title="chat widget"] {
     filter: hue-rotate(55deg) saturate(1.2) brightness(1.1) !important;

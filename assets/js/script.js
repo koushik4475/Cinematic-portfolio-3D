@@ -472,6 +472,7 @@ document.addEventListener('DOMContentLoaded', () => {
    Tawk.to Live Chat — Custom Cinematic Launcher
    ============================================ */
 var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+var tawkLoaded = false, tawkOpenPending = false;
 (function () {
     var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
     s1.async = true; s1.src = 'https://embed.tawk.to/65956f8e8d261e1b5f4ec1ab/1hj7rnibr';
@@ -494,6 +495,7 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 })();
 
 Tawk_API.onLoad = function () {
+    tawkLoaded = true;
     // Hide the default Tawk bubbles to use our cinematic robo-pet
     Tawk_API.hideWidget();
     Tawk_API.onStatusChange = function (status) {
@@ -501,14 +503,20 @@ Tawk_API.onLoad = function () {
             Tawk_API.hideWidget();
         }
     };
-    
+
     // Set custom personality
     Tawk_API.setAttributes({
         'name': 'Visitor',
         'hash': 'hash_value' // Optional security
     }, function(error){});
-    // We can't change the internal theme easily via API, 
-    // but we can influence the 'presence' text if the dashboard allows.
+
+    // If the visitor clicked the robot before Tawk finished loading, open now.
+    if (tawkOpenPending) {
+        tawkOpenPending = false;
+        document.body.classList.add('tawk-chat-open');
+        Tawk_API.showWidget();
+        Tawk_API.maximize();
+    }
 };
 
 // Personality & Auto-Status
@@ -516,8 +524,31 @@ Tawk_API.onChatMessageAgent = function(n){
    // Custom logic for when agent sends message
 };
 
+// Tawk re-shows its default bubble whenever the chat is minimized or ended —
+// drop the reveal class and re-hide so the robo-pet stays the only launcher.
+Tawk_API.onChatMinimized = function () {
+    document.body.classList.remove('tawk-chat-open');
+    Tawk_API.hideWidget();
+};
+Tawk_API.onChatEnded = function () {
+    document.body.classList.remove('tawk-chat-open');
+    Tawk_API.hideWidget();
+};
+
 document.getElementById('master-robot-orb').addEventListener('click', () => {
-    Tawk_API.toggle();
+    if (!tawkLoaded) {
+        // Clicked before the Tawk script finished loading — open it from onLoad.
+        tawkOpenPending = true;
+        return;
+    }
+    if (typeof Tawk_API.isChatMaximized === 'function' && Tawk_API.isChatMaximized()) {
+        document.body.classList.remove('tawk-chat-open');
+        Tawk_API.minimize();
+    } else {
+        document.body.classList.add('tawk-chat-open');
+        Tawk_API.showWidget();
+        Tawk_API.maximize();
+    }
 });
 
 /* ============================================
