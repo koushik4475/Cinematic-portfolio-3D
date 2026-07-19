@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Block nothing — every part of the site should be indexable.
+Sitemap: https://koushikhy.netlify.app/sitemap.xml
