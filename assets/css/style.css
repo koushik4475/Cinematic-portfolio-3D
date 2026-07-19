@@ -1408,35 +1408,46 @@ header .navbar ul li a.active {
   z-index: 2;
 }
 
-.experience .container::after {
-  content: "\f0b1";
+/* Circular company-logo node on the timeline (10% larger than the old glyph) */
+.experience .exp-node {
   position: absolute;
-  width: 4rem;
-  height: 4rem;
-  right: -2rem;
-  background: var(--black-card);
+  width: 4.4rem;
+  height: 4.4rem;
+  top: 1.8rem;
   border: 2px solid transparent;
+  background: var(--black-card);
   background-image: linear-gradient(var(--black), var(--black)), var(--gradient-main);
   background-origin: border-box;
   background-clip: padding-box, border-box;
-  top: 2rem;
   border-radius: 50%;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
-  color: #fff;
-  font-family: "Font Awesome\ 5 Free";
-  font-weight: 900;
+  overflow: hidden;
   box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
   transition: var(--bounce);
 }
 
-.experience .container:hover::after {
-  background-image: var(--gradient-main), var(--gradient-main);
-  color: var(--black);
-  transform: scale(1.2) rotate(360deg);
+.experience .right .exp-node {
+  left: -2.2rem;
+}
+
+.experience .left .exp-node {
+  right: -2.2rem;
+}
+
+.experience .exp-node img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+  padding: 3px;
+}
+
+.experience .container:hover .exp-node {
+  transform: scale(1.12) rotate(360deg);
   box-shadow: 0 0 30px rgba(0, 229, 255, 0.6), 0 0 60px rgba(139, 92, 246, 0.4);
 }
 
@@ -1472,10 +1483,6 @@ header .navbar ul li a.active {
   border: medium solid rgba(0, 229, 255, 0.3);
   border-width: 10px 10px 10px 0;
   border-color: transparent rgba(0, 229, 255, 0.3) transparent transparent;
-}
-
-.experience .right::after {
-  left: -2rem;
 }
 
 .experience .content {
@@ -1516,14 +1523,24 @@ header .navbar ul li a.active {
 }
 
 .experience .content .tag h2 {
-  font-family: var(--font-heading);
   font-size: 1.8rem;
   font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.experience .content .tag h2 a {
+  font-family: var(--font-heading);
   background: var(--gradient-main);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 0.8rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.experience .content .tag h2 a:hover {
+  filter: brightness(1.25) drop-shadow(0 0 8px rgba(0, 229, 255, 0.5));
 }
 
 .experience .content .desc h3 {
@@ -2503,8 +2520,9 @@ iframe[title="chat widget"] {
     left: 0;
   }
 
-  .experience .container::after {
-    left: 0.3rem !important;
+  .experience .right .exp-node,
+  .experience .left .exp-node {
+    left: 0.1rem;
     right: auto;
   }
 
