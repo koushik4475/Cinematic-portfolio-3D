@@ -1,25 +1,3 @@
-plugins = []
-headers = []
-redirects = []
-
-[functions]
-
-[functions."*"]
-
+# Netlify configuration — static site served from the repository root.
 [build]
-publish = "C:\\Users\\koush\\Desktop\\koushikhy"
-publishOrigin = "default"
-
-[build.environment]
-
-[build.processing]
-
-[build.processing.css]
-
-[build.processing.html]
-
-[build.processing.images]
-
-[build.processing.js]
-
-[build.services]
+  publish = "."
