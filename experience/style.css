@@ -600,24 +600,14 @@ body:not(.tawk-chat-open) div.widget-visible {
 
 
 /* ============================================
-   ROBO ABOVE OPEN CHAT
-   Tawk's iframe stacks at ~2e9, hiding the robo
-   while the chat is open. Lift the robo above it,
-   shrunk into the corner, so it stays the visible
-   minimize control for the chat window.
+   HIDE ROBO WHILE CHAT IS OPEN
+   Once the visitor opens the chat, the robo-pet
+   vanishes (same idiom as .mobile-hide) and pops
+   back when the chat is minimized or ended and
+   body.tawk-chat-open is removed.
    ============================================ */
 body.tawk-chat-open .robo-pet {
-  z-index: 2147483647 !important;
-  bottom: 0.4rem !important;
-  right: 0.4rem !important;
-  transform: scale(0.55);
-  transform-origin: bottom right;
-}
-
-/* Fullscreen mobile chat: a corner robo would sit on the
-   message input — let Tawk's own controls take over there. */
-@media (max-width: 768px) {
-  body.tawk-chat-open .robo-pet {
-    display: none !important;
-  }
+  opacity: 0 !important;
+  transform: scale(0) !important;
+  pointer-events: none !important;
 }
