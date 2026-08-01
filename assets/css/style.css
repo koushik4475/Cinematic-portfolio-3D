@@ -2691,3 +2691,26 @@ header.scrolled {
   background: rgba(2, 2, 2, 0.8) !important;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 229, 255, 0.1) !important;
 }
+
+/* ============================================
+   ROBO ABOVE OPEN CHAT
+   Tawk's iframe stacks at ~2e9, hiding the robo
+   while the chat is open. Lift the robo above it,
+   shrunk into the corner, so it stays the visible
+   minimize control for the chat window.
+   ============================================ */
+body.tawk-chat-open .robo-pet {
+  z-index: 2147483647 !important;
+  bottom: 0.4rem !important;
+  right: 0.4rem !important;
+  transform: scale(0.55);
+  transform-origin: bottom right;
+}
+
+/* Fullscreen mobile chat: a corner robo would sit on the
+   message input — let Tawk's own controls take over there. */
+@media (max-width: 768px) {
+  body.tawk-chat-open .robo-pet {
+    display: none !important;
+  }
+}
