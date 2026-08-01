@@ -466,3 +466,134 @@ header .navbar ul li a:hover{
   top: calc(100% - 12rem);
 }
 /* scroll top ends */
+
+/* ============================================
+   ROBO-PET — Interactive 3D Companion
+   ============================================ */
+.robo-pet {
+  position: fixed !important;
+  bottom: 2rem !important;
+  right: 2rem !important;
+  z-index: 1001 !important;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.robo-pet #scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0 1rem;
+  gap: 6px;
+  user-select: none;
+}
+
+.robo-pet #robo-root {
+  position: relative;
+  width: 120px;
+  height: 160px;
+}
+
+.robo-pet #robo {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  cursor: pointer;
+  transition: filter 0.3s;
+}
+
+.robo-pet #robo:hover {
+  filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.4));
+}
+
+@keyframes robo-float { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-10px); } }
+@keyframes robo-shadow-pulse { 0%, 100% { transform: scale(1); opacity: .35; } 50% { transform: scale(0.7); opacity: .18; } }
+@keyframes walk-l { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-22deg); } }
+@keyframes walk-r { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(22deg); } }
+@keyframes arm-idle { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(12deg); } }
+@keyframes wave { 0% { transform: rotate(0deg); } 25% { transform: rotate(-60deg); } 75% { transform: rotate(15deg); } 100% { transform: rotate(0deg); } }
+@keyframes jump { 0%, 100% { transform: translateX(-50%) translateY(0); } 30% { transform: translateX(-50%) translateY(-40px); } 60% { transform: translateX(-50%) translateY(-25px); } }
+@keyframes chest-blink { 0%, 90%, 100% { opacity: 1; } 95% { opacity: .2; } }
+@keyframes antenna-blink { 0%, 85%, 100% { opacity: 1; r: 4; } 92% { opacity: .3; r: 2; } }
+
+.robo-pet #robo.float { animation: robo-float 2.2s ease-in-out infinite; }
+.robo-pet #robo.walk #leg-l { animation: walk-l .4s ease-in-out infinite; }
+.robo-pet #robo.walk #leg-r { animation: walk-r .4s ease-in-out infinite; }
+.robo-pet #robo.idle #arm-l { animation: arm-idle 2.5s ease-in-out infinite; }
+.robo-pet #robo.wave-anim #arm-r { animation: wave .6s ease-in-out 2; }
+.robo-pet #robo.jump-anim { animation: jump .5s ease-out; }
+
+.robo-pet #robo-shadow-bottom {
+  width: 60px;
+  height: 14px;
+  background: radial-gradient(ellipse, rgba(0, 240, 200, .28), transparent 72%);
+  border-radius: 50%;
+  margin-top: -4px;
+  animation: robo-shadow-pulse 2.2s ease-in-out infinite;
+}
+
+.robo-pet #mood {
+  font-size: 11px;
+  color: #00e5ff;
+  background: rgba(0, 229, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  letter-spacing: .05em;
+  height: auto;
+  text-align: center;
+  transition: opacity 0.3s, transform 0.3s;
+  white-space: nowrap;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.robo-pet.mobile-hide {
+  opacity: 0 !important;
+  transform: scale(0) !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 768px) {
+  .robo-pet {
+    bottom: 1.5rem !important;
+    right: 1.5rem !important;
+    transform: scale(0.65);
+    transform-origin: bottom right;
+  }
+}
+
+/* ============================================
+   TAWK.TO THEME CORRECTION
+   ============================================ */
+/* Target the Tawk.to messenger container to shift Green -> Cyan */
+div[id^="tawk-"] iframe,
+.tawk-messenger,
+iframe[title="chat widget"] {
+    filter: hue-rotate(55deg) saturate(1.2) brightness(1.1) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 30px rgba(0, 242, 255, 0.2) !important;
+}
+
+/* Ensure the widget blends with our dark theme */
+.tawk-messenger {
+    background: transparent !important;
+}
+
+/* ============================================
+   Tawk.to masking — kill the default bubble &
+   "We Are Here" attention grabber from first
+   paint. The chat iframe is only revealed while
+   <body> carries .tawk-chat-open (robot click).
+   ============================================ */
+body:not(.tawk-chat-open) iframe[title="chat widget" i],
+body:not(.tawk-chat-open) iframe[src*="tawk.to" i],
+body:not(.tawk-chat-open) div[id^="tawk" i],
+body:not(.tawk-chat-open) div.widget-visible {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;

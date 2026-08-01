@@ -243,6 +243,148 @@
   <a href="#experience" class="fas fa-angle-up" id="scroll-top"></a>
   <!-- scroll back to top -->
 
+  <div id="master-robot-orb" aria-label="Live Chat" class="robo-pet">
+    <div id="scene">
+      <div id="robo-root">
+        <div id="robo-shadow"></div>
+        <svg id="robo" class="float idle" viewBox="0 0 120 155" xmlns="http://www.w3.org/2000/svg" style="overflow:visible;">
+        <defs>
+          <linearGradient id="bodyG" x1="20%" y1="0%" x2="80%" y2="100%">
+            <stop offset="0%" stop-color="#3a3a5c"/><stop offset="100%" stop-color="#1a1a2e"/>
+          </linearGradient>
+          <linearGradient id="headG" x1="15%" y1="0%" x2="85%" y2="100%">
+            <stop offset="0%" stop-color="#42426a"/><stop offset="100%" stop-color="#20203a"/>
+          </linearGradient>
+          <linearGradient id="limbG" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#32324e"/><stop offset="100%" stop-color="#18182a"/>
+          </linearGradient>
+          <radialGradient id="eyeGl" cx="35%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="#ccffee"/><stop offset="30%" stop-color="#00f5d4"/><stop offset="100%" stop-color="#005540"/>
+          </radialGradient>
+          <radialGradient id="chestGl" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#80ffee"/><stop offset="100%" stop-color="#00a888"/>
+          </radialGradient>
+          <filter id="eFX" x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur stdDeviation="4" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="sFX" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="2.5" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="bodyFX" x="-10%" y="-10%" width="120%" height="120%">
+            <feGaussianBlur stdDeviation="1.5" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- ANTENNA -->
+        <line x1="60" y1="12" x2="60" y2="22" stroke="#4a4a7a" stroke-width="2.5" stroke-linecap="round"/>
+        <circle id="ant-dot" cx="60" cy="8" r="4.5" fill="#00f5d4" filter="url(#sFX)" style="animation:antenna-blink 3s ease-in-out infinite;"/>
+        <circle cx="60" cy="8" r="2" fill="#ccffee"/>
+
+        <!-- NECK -->
+        <rect x="49" y="72" width="22" height="8" rx="3" fill="#252538"/>
+        <line x1="53" y1="74" x2="53" y2="78" stroke="#383858" stroke-width="1.2"/>
+        <line x1="60" y1="74" x2="60" y2="78" stroke="#383858" stroke-width="1.2"/>
+        <line x1="67" y1="74" x2="67" y2="78" stroke="#383858" stroke-width="1.2"/>
+
+        <!-- HEAD -->
+        <rect x="22" y="20" width="76" height="54" rx="14" fill="url(#headG)" stroke="#3a3a60" stroke-width="1.5"/>
+        <!-- head side bolts -->
+        <circle cx="22" cy="36" r="3.5" fill="#2c2c44" stroke="#404065" stroke-width="1"/>
+        <circle cx="98" cy="36" r="3.5" fill="#2c2c44" stroke="#404065" stroke-width="1"/>
+        <circle cx="22" cy="58" r="3.5" fill="#2c2c44" stroke="#404065" stroke-width="1"/>
+        <circle cx="98" cy="58" r="3.5" fill="#2c2c44" stroke="#404065" stroke-width="1"/>
+        <!-- head top edge line -->
+        <line x1="36" y1="21" x2="84" y2="21" stroke="#4a4a78" stroke-width="0.8" opacity=".7"/>
+        <!-- visor strip bg -->
+        <rect x="28" y="34" width="64" height="28" rx="8" fill="#0a0a18" stroke="#2a2a48" stroke-width="1"/>
+
+        <!-- EYES (interactive) -->
+        <!-- left socket -->
+        <ellipse cx="48" cy="48" rx="14" ry="12" fill="#050510" stroke="#2e2e50" stroke-width="1"/>
+        <!-- left iris -->
+        <ellipse id="liris" cx="48" cy="48" rx="11" ry="10" fill="url(#eyeGl)"/>
+        <!-- left slit -->
+        <ellipse id="lpup" cx="48" cy="48" rx="3.5" ry="9" fill="#001a10" opacity=".9"/>
+        <!-- left glow -->
+        <ellipse cx="48" cy="48" rx="11" ry="10" fill="none" stroke="#00f5d4" stroke-width="3" filter="url(#eFX)" opacity=".6"/>
+        <!-- left highlight -->
+        <ellipse id="lhl" cx="44" cy="44" rx="3.8" ry="2" fill="white" opacity=".65"/>
+        <!-- left blink -->
+        <ellipse id="lblink" cx="48" cy="48" rx="15" ry="0" fill="#0a0a18"/>
+
+        <!-- right socket -->
+        <ellipse cx="72" cy="48" rx="14" ry="12" fill="#050510" stroke="#2e2e50" stroke-width="1"/>
+        <ellipse id="riris" cx="72" cy="48" rx="11" ry="10" fill="url(#eyeGl)"/>
+        <ellipse id="rpup" cx="72" cy="48" rx="3.5" ry="9" fill="#001a10" opacity=".9"/>
+        <ellipse cx="72" cy="48" rx="11" ry="10" fill="none" stroke="#00f5d4" stroke-width="3" filter="url(#eFX)" opacity=".6"/>
+        <ellipse id="rhl" cx="68" cy="44" rx="3.8" ry="2" fill="white" opacity=".65"/>
+        <ellipse id="rblink" cx="72" cy="48" rx="15" ry="0" fill="#0a0a18"/>
+
+        <!-- mouth/speaker -->
+        <rect x="42" y="62" width="36" height="7" rx="3.5" fill="#0e0e20" stroke="#2c2c48" stroke-width=".8"/>
+        <rect x="46" y="64" width="4" height="3" rx="1" fill="#303055"/>
+        <rect x="52" y="64" width="4" height="3" rx="1" fill="#303055"/>
+        <rect x="58" y="64" width="4" height="3" rx="1" fill="#303055"/>
+        <rect x="64" y="64" width="4" height="3" rx="1" fill="#303055"/>
+        <rect x="70" y="64" width="4" height="3" rx="1" fill="#303055"/>
+
+        <!-- ARMS -->
+        <g id="arm-l" style="transform-origin:28px 90px;">
+          <rect x="14" y="82" width="18" height="30" rx="7" fill="url(#limbG)" stroke="#2e2e4a" stroke-width="1.2"/>
+          <rect x="16" y="86" width="14" height="8" rx="3" fill="#222235" opacity=".8"/>
+          <!-- hand -->
+          <rect x="14" y="110" width="18" height="14" rx="5" fill="#2a2a42" stroke="#383855" stroke-width="1"/>
+          <circle cx="20" cy="122" r="2.5" fill="#00d0b8" opacity=".7"/>
+        </g>
+        <g id="arm-r" style="transform-origin:92px 90px;">
+          <rect x="88" y="82" width="18" height="30" rx="7" fill="url(#limbG)" stroke="#2e2e4a" stroke-width="1.2"/>
+          <rect x="90" y="86" width="14" height="8" rx="3" fill="#222235" opacity=".8"/>
+          <rect x="88" y="110" width="18" height="14" rx="5" fill="#2a2a42" stroke="#383855" stroke-width="1"/>
+          <circle cx="100" cy="122" r="2.5" fill="#00d0b8" opacity=".7"/>
+        </g>
+
+        <!-- BODY -->
+        <rect x="30" y="78" width="60" height="52" rx="10" fill="url(#bodyG)" stroke="#383860" stroke-width="1.5"/>
+        <!-- body side ridges -->
+        <line x1="31" y1="90" x2="31" y2="118" stroke="#404068" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="89" y1="90" x2="89" y2="118" stroke="#404068" stroke-width="1.2" stroke-linecap="round"/>
+        <!-- chest screen -->
+        <rect x="40" y="85" width="40" height="30" rx="6" fill="#08081a" stroke="#2a2a48" stroke-width=".9"/>
+        <!-- chest glow orb -->
+        <circle id="chest-orb" cx="60" cy="100" r="9" fill="url(#chestGl)" filter="url(#sFX)" style="animation:chest-blink 3.5s ease-in-out infinite;"/>
+        <circle cx="60" cy="100" r="5" fill="#ccffee"/>
+        <!-- chest corner dots -->
+        <circle cx="44" cy="89" r="1.5" fill="#2a2a50"/>
+        <circle cx="76" cy="89" r="1.5" fill="#2a2a50"/>
+        <circle cx="44" cy="111" r="1.5" fill="#2a2a50"/>
+        <circle cx="76" cy="111" r="1.5" fill="#2a2a50"/>
+        <!-- waist ridge -->
+        <rect x="30" y="124" width="60" height="7" rx="3" fill="#20203a" stroke="#303050" stroke-width=".8"/>
+        <line x1="40" y1="127" x2="80" y2="127" stroke="#404068" stroke-width=".7" opacity=".6"/>
+
+        <!-- LEGS -->
+        <g id="leg-l" style="transform-origin:47px 132px;">
+          <rect x="34" y="130" width="24" height="20" rx="6" fill="url(#limbG)" stroke="#2e2e4a" stroke-width="1.1"/>
+          <!-- foot -->
+          <rect x="30" y="148" width="30" height="12" rx="5" fill="#22223a" stroke="#343455" stroke-width="1"/>
+          <rect x="32" y="151" width="14" height="5" rx="2" fill="#2c2c48"/>
+        </g>
+        <g id="leg-r" style="transform-origin:73px 132px;">
+          <rect x="62" y="130" width="24" height="20" rx="6" fill="url(#limbG)" stroke="#2e2e4a" stroke-width="1.1"/>
+          <rect x="60" y="148" width="30" height="12" rx="5" fill="#22223a" stroke="#343455" stroke-width="1"/>
+          <rect x="74" y="151" width="14" height="5" rx="2" fill="#2c2c48"/>
+        </g>
+
+        </svg>
+      </div>
+      <div id="robo-shadow-bottom" style="width:60px;height:14px;background:radial-gradient(ellipse,rgba(0,240,200,.28),transparent 72%);border-radius:50%;margin-top:-4px;animation:shadow-pulse 2.2s ease-in-out infinite;"></div>
+      <div id="mood">◈ system: active. chat? ◈</div>
+    </div>
+  </div>
+
 
   <!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
   <!-- jquery cdn -->
