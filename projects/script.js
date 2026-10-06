@@ -118,44 +118,7 @@ document.addEventListener('visibilitychange', function () {
     }
 });
 
-async function getProjects() {
-    // Truly relative path for projects.json
-    const response = await fetch("./projects.json");
-    return await response.json();
-}
-
-function showProjects(projects) {
-    let projectsContainer = document.querySelector(".work .box-container");
-    let projectsHTML = "";
-
-    projects.forEach(project => {
-        const ext = project.imageExt || 'png';
-        projectsHTML += `
-        <div class="grid-item ${project.category}">
-            <div class="box tilt">
-                <div class="image">
-                    <img draggable="false" src="../assets/images/projects/${project.image}.${ext}" alt="${project.name}" loading="lazy" />
-                </div>
-                <div class="content">
-                    <h3>${project.name}</h3>
-                    <div class="desc">
-                        <p>${project.desc}</p>
-                        <div class="btns">
-                            <a href="${project.links.view}" class="btn btn--view" target="_blank">
-                                <i class="fas fa-eye"></i> View
-                            </a>
-                            <a href="${project.links.code}" class="btn btn--code" target="_blank">
-                                <i class="fas fa-code"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>`;
-    });
-
-    projectsContainer.innerHTML = projectsHTML;
-
+function initPortfolioGrid() {
     if (window.innerWidth > 768) {
         VanillaTilt.init(document.querySelectorAll(".tilt"), {
             max: 10,
@@ -180,6 +143,4 @@ function showProjects(projects) {
     });
 }
 
-getProjects().then(data => {
-    showProjects(data);
-});
+initPortfolioGrid();
