@@ -27,6 +27,12 @@ A premium, high-fidelity personal portfolio featuring immersive **Three.js** 3D 
 - **Lighting Dynamics**: Ambient illumination paired with dual point rim lights for realistic surface reflection.
 - **Responsive Frame Loop**: Adaptive `requestAnimationFrame` ensuring steady 60 FPS across desktop and mobile devices.
 
+## ⚡ Performance & Asset Optimization
+
+- **GPU Offloading**: Uses hardware-accelerated CSS transforms and WebGL instancing to minimize main thread latency.
+- **Progressive Asset Loading**: Non-blocking asynchronous texture uploads and optimized image payloads.
+- **SEO & Accessibility**: Fully compliant WCAG accessibility attributes with comprehensive OpenGraph and semantic HTML tags.
+
 ## 🎨 Design Philosophy
 
 Every pixel is crafted to provide a "Cinematic" experience, drawing inspiration from high-budget Sci-Fi interfaces and premium studio branding. The use of a dark, high-contrast palette with **Cyan** and **Violet** secondary accents ensures maximum visual punch.
