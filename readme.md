@@ -21,6 +21,12 @@ A premium, high-fidelity personal portfolio featuring immersive **Three.js** 3D 
 - **Styling**: Vanilla CSS (Custom Variable Design System)
 - **Features**: Netlify Deployment, Google AdSense, EmailJS Integration, Tawk.to Live Chat (Custom Interface)
 
+## 🏛️ Architecture & Rendering Pipeline
+
+- **Geometry & Shaders**: Built upon WebGL using Three.js with optimized vertex loops and buffer attributes.
+- **Lighting Dynamics**: Ambient illumination paired with dual point rim lights for realistic surface reflection.
+- **Responsive Frame Loop**: Adaptive `requestAnimationFrame` ensuring steady 60 FPS across desktop and mobile devices.
+
 ## 🎨 Design Philosophy
 
 Every pixel is crafted to provide a "Cinematic" experience, drawing inspiration from high-budget Sci-Fi interfaces and premium studio branding. The use of a dark, high-contrast palette with **Cyan** and **Violet** secondary accents ensures maximum visual punch.
