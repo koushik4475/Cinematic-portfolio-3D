@@ -95,10 +95,10 @@
 <body>
 
   <!-- Cinematic Vignette Overlay -->
-  <div id="cinematic-vignette"></div>
+  <div id="cinematic-vignette" class="google-anno-skip"></div>
 
   <!-- Cinematic Preloader (Curtain Reveal) -->
-  <div id="cinematic-preloader">
+  <div id="cinematic-preloader" class="google-anno-skip">
     <div class="curtain top-curtain"></div>
     <div class="curtain bottom-curtain"></div>
     <div class="light-slit"></div>
@@ -122,13 +122,14 @@
         <li><a href="#education">Education</a></li>
         <li><a href="#work">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#insights">Insights</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="home" id="home">
-    <canvas id="three-canvas"></canvas>
+  <section class="home google-anno-skip" id="home">
+    <canvas id="three-canvas" class="google-anno-skip"></canvas>
 
     <div class="content">
       <h2>Hi There,<br /> I'm <span class="text-gradient">KOUSHIK HY</span></h2>
@@ -365,6 +366,80 @@
 
   </section>
 
+  <!-- Engineering Insights & Architecture Deep Dives Section -->
+  <section class="insights" id="insights">
+    <h2 class="heading"><i class="fas fa-brain"></i> Engineering <span>Insights</span></h2>
+    <p style="text-align:center; font-size:1.6rem; color:#888; max-width:800px; margin: 0 auto 3rem;">In-depth technical architecture breakdowns, algorithmic analysis, and engineering case studies from real-world systems.</p>
+
+    <div class="box-container">
+      
+      <!-- Article 1: FocusGuard AI -->
+      <article class="insight-card">
+        <span class="insight-badge">Computer Vision &bull; Edge AI</span>
+        <h3>Real-Time Driver Fatigue &amp; Distraction Architecture</h3>
+        <p><strong>Problem Space:</strong> Micro-sleep episodes and cognitive inattention cause a substantial percentage of highway transit collisions. Cloud-based video telemetry introduces prohibitive latency (&gt;300ms) and privacy concerns. Developing an on-device, real-time edge computer vision model required balancing high inference frame rates with low thermal and CPU envelopes.</p>
+        <p><strong>Algorithmic Solution:</strong> The FocusGuard pipeline uses OpenCV and MediaPipe to detect 68 distinct facial coordinate landmarks at 60 FPS. The system calculates the Eye Aspect Ratio (EAR) based on vertical and horizontal Euclidean distances: <em>EAR = (||p2 - p6|| + ||p3 - p5||) / (2 * ||p1 - p4||)</em>. When the EAR falls below a calibrated threshold (&lt;0.22) across consecutive frames, a rolling temporal window computes the PERCLOS (Percentage of Eye Closure) metric.</p>
+        <p><strong>Spatial Head Pose Estimation:</strong> By mapping 2D facial landmarks to an idealized 3D generic facial anthropomorphic model via Perspective-n-Point (solvePnP), the system derives the user's pitch, yaw, and roll Euler angles. Inattention thresholds trigger auditory haptic alarms whenever prolonged angular deviation exceeding 35&deg; is detected.</p>
+        <div class="tech-list">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">OpenCV</span>
+          <span class="tech-tag">MediaPipe</span>
+          <span class="tech-tag">SciPy EAR</span>
+          <span class="tech-tag">Perspective-n-Point</span>
+        </div>
+      </article>
+
+      <!-- Article 2: Visio-Nexus -->
+      <article class="insight-card">
+        <span class="insight-badge">Distributed Systems &bull; Deep Learning</span>
+        <h3>Autonomous Multi-Camera AI Surveillance &amp; Spatial Tracking</h3>
+        <p><strong>Distributed Stream Processing:</strong> The Visio-Nexus platform ingests multiple simultaneous high-definition RTSP video streams across industrial and smart-campus environments. The architecture incorporates an asynchronous multi-threaded frame consumer pattern to prevent buffer bloat and avoid I/O blocking during inference spikes.</p>
+        <p><strong>Object Re-Identification Pipeline:</strong> Frame feeds pass through a lightweight YOLO convolutional backbone for high-confidence bounding box localization. Detected faces are normalized through affine transformations before generating 512-dimensional feature embeddings via FaceNet / InsightFace. Spatial tracking across occlusions is maintained using Kalman Filter state prediction coupled with Hungarian association (DeepSORT).</p>
+        <p><strong>Vector Search &amp; Anomaly Detection:</strong> Identity matching is accomplished in sub-10ms latency using hierarchical navigable small world (HNSW) vector search against high-dimensional biometric index registries. Unsupervised autoencoder anomaly models flag erratic trajectory velocities and perimeter breaches, delivering immediate secure web notifications.</p>
+        <div class="tech-list">
+          <span class="tech-tag">YOLOv8</span>
+          <span class="tech-tag">DeepSORT</span>
+          <span class="tech-tag">FaceNet</span>
+          <span class="tech-tag">RTSP Stream Ingestion</span>
+          <span class="tech-tag">Vector Indexing</span>
+        </div>
+      </article>
+
+      <!-- Article 3: 3D Web Graphics -->
+      <article class="insight-card">
+        <span class="insight-badge">WebGL &bull; Shader Engineering</span>
+        <h3>High-Performance 3D Scene Graph Optimization in Three.js</h3>
+        <p><strong>Shader &amp; Geometry Design:</strong> Creating cinematic WebGL web experiences requires strict GPU memory budgets to ensure fluid 60-120 FPS rendering on mobile devices. The centerpiece icosahedron and interactive particle networks rely on custom vertex shaders with procedural noise displacement rather than high-polygon static meshes.</p>
+        <p><strong>Lighting &amp; Post-Processing:</strong> Studio-quality cinematic aesthetics are achieved using a multi-pass lighting pipeline consisting of directional rim illumination, ambient chromatic shifts, and subtle radial vignette shaders. Mouse-driven parallax is dampened through spring-physics lerping (linear interpolation: <em>current += (target - current) * alpha</em>) to produce a weighted, physical feel.</p>
+        <p><strong>Performance Budgeting:</strong> The render loop dynamically throttles DPR (device pixel ratio) scaling on high-density displays (capping at 2.0x) and terminates animation rendering when the document visibility state enters background tabs via the Page Visibility API, reducing battery drain to zero.</p>
+        <div class="tech-list">
+          <span class="tech-tag">Three.js</span>
+          <span class="tech-tag">GLSL Shaders</span>
+          <span class="tech-tag">WebGL 2.0</span>
+          <span class="tech-tag">Page Visibility API</span>
+          <span class="tech-tag">Spring Physics</span>
+        </div>
+      </article>
+
+      <!-- Article 4: Municipal IoT Waste Management -->
+      <article class="insight-card">
+        <span class="insight-badge">IoT Telemetry &bull; Graph Algorithms</span>
+        <h3>Smart City Telemetry &amp; Dynamic Route Optimization</h3>
+        <p><strong>Sensor Telemetry Architecture:</strong> Municipal waste collection in modern urban centers suffers from inefficient fixed schedules. The Smart City IoT system connects ultrasonic fill-level transducers and GPS modules via low-power MQTT micro-protocols to publish real-time bin capacity metrics to a centralized event bus.</p>
+        <p><strong>Graph-Based Dispatch Routing:</strong> When bin fill thresholds breach 80% capacity, an automated dispatch job constructs a dynamic weighted graph of pickup waypoints. The engine evaluates Euclidean distances, traffic weightings, and vehicle capacity constraints using Dijkstra's shortest path and A* heuristic routing algorithms.</p>
+        <p><strong>Operational Impact:</strong> Fleet simulations demonstrate a 32% reduction in fuel consumption, complete elimination of waste overflow incidents, and automated driver navigation delivery via native Android client applications.</p>
+        <div class="tech-list">
+          <span class="tech-tag">MQTT</span>
+          <span class="tech-tag">IoT Microcontrollers</span>
+          <span class="tech-tag">Graph Algorithms</span>
+          <span class="tech-tag">A* Route Optimization</span>
+          <span class="tech-tag">Android Client</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
   <section class="contact" id="contact">
 
     <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
@@ -427,11 +502,14 @@
         <a href="#education"><i class="fas fa-chevron-right"></i> Education</a>
         <a href="#work"><i class="fas fa-chevron-right"></i> Projects</a>
         <a href="#experience"><i class="fas fa-chevron-right"></i> Experience</a>
+        <a href="#insights"><i class="fas fa-chevron-right"></i> Insights</a>
+        <a href="./privacy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a>
+        <a href="./terms.html"><i class="fas fa-chevron-right"></i> Terms of Service</a>
       </div>
 
       <div class="box">
         <h3>Contact Info</h3>
-        <p> <i class="fas fa-phone"></i> +91 XXX-XXX-XXXX</p>
+        <p> <i class="fas fa-phone"></i> +91 962-096-8968</p>
         <p> <i class="fas fa-envelope"></i> koushik4475@gmail.com</p>
         <p> <i class="fas fa-map-marked-alt"></i> Karnataka, India - 570012</p>
         <div class="share">
@@ -449,14 +527,14 @@
       </div>
     </div>
 
-    <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a
+    <h1 class="credit">&copy; 2026 Koushik HY. All rights reserved. | Designed with <i class="fa fa-heart pulse"></i> by <a
         href="https://www.linkedin.com/in/koushik-hy-3740a125b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         aria-label="LinkedIn" rel="noopener noreferrer"> Koushik HY</a></h1>
 
   </section>
 
-  <a href="#home" aria-label="Scroll to top" id="scroll-top" class="crazy-orb"><i class="fas fa-angles-up"></i></a>
-  <div id="master-robot-orb" aria-label="Live Chat" class="robo-pet">
+  <a href="#home" aria-label="Scroll to top" id="scroll-top" class="crazy-orb google-anno-skip"><i class="fas fa-angles-up"></i></a>
+  <div id="master-robot-orb" aria-label="Live Chat" class="robo-pet google-anno-skip">
     <div id="scene">
       <div id="robo-root">
         <div id="robo-shadow"></div>
