@@ -2704,3 +2704,94 @@ body.tawk-chat-open .robo-pet {
   transform: scale(0) !important;
   pointer-events: none !important;
 }
+
+/* ============================================
+   ENGINEERING INSIGHTS & CASE STUDIES
+   ============================================ */
+.insights {
+  background: var(--black-light);
+  min-height: auto;
+  padding: 8rem 9% 4rem;
+}
+
+.insights .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.insights .insight-card {
+  background: rgba(10, 10, 15, 0.7);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 3rem;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.insights .insight-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 229, 255, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 229, 255, 0.15);
+}
+
+.insights .insight-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.4rem 1.2rem;
+  border-radius: 2rem;
+  background: rgba(0, 229, 255, 0.1);
+  color: var(--cyan);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  margin-bottom: 1.5rem;
+}
+
+.insights .insight-card h3 {
+  font-size: 2rem;
+  color: var(--text-white);
+  font-family: var(--font-heading);
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.insights .insight-card p {
+  font-size: 1.4rem;
+  color: #b0b4ba;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.insights .insight-card .tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.insights .insight-card .tech-tag {
+  font-size: 1.2rem;
+  color: var(--violet);
+  background: rgba(139, 92, 246, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.6rem;
+}
+
+@media (max-width: 768px) {
+  .insights {
+    padding: 6rem 5% 3rem;
+  }
+  .insights .box-container {
+    grid-template-columns: 1fr;
+  }
+}
+
