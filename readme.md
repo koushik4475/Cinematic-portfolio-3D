@@ -33,6 +33,12 @@ A premium, high-fidelity personal portfolio featuring immersive **Three.js** 3D 
 - **Progressive Asset Loading**: Non-blocking asynchronous texture uploads and optimized image payloads.
 - **SEO & Accessibility**: Fully compliant WCAG accessibility attributes with comprehensive OpenGraph and semantic HTML tags.
 
+## 🕹️ Interactive Controls & Motion Physics
+
+- **Dynamic Parallax**: Gyroscope and mouse cursor position interpolation for natural 3D depth perception.
+- **Inertial Damping**: Spring-physics smoothing applied to all rotating camera viewpoints and 3D meshes.
+- **Tactile Feedback**: Visual response loops on hover, click, and view switching.
+
 ## 🎨 Design Philosophy
 
 Every pixel is crafted to provide a "Cinematic" experience, drawing inspiration from high-budget Sci-Fi interfaces and premium studio branding. The use of a dark, high-contrast palette with **Cyan** and **Violet** secondary accents ensures maximum visual punch.
