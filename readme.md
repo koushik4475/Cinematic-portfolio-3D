@@ -1,4 +1,7 @@
-# 🌌 Cinematic Portfolio — Koushik HY
+# Cinematic 3D Portfolio Website | Three.js, WebGL Effects & Glassmorphism UI
+
+Cinematic Portfolio 3D is a personal portfolio website experiment built around immersive Three.js visuals, interactive 3D geometry, mouse-responsive motion, studio-style lighting, and glassmorphism interface elements. It is useful as a front-end showcase for developers exploring Three.js, browser-based 3D rendering, animation, and high-impact portfolio design.
+
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/06a9675e-088a-4125-852e-4e70149ce97d/deploy-status)](https://app.netlify.com/sites/koushikhy/deploys)
 [![GitHub Pages](https://github.com/koushik4475/Cinematic-portfolio-3D/actions/workflows/gh-pages.yml/badge.svg)](https://koushik4475.github.io/Cinematic-portfolio-3D/)
