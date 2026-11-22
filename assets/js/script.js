@@ -9,6 +9,7 @@
 
     const isMobile = window.innerWidth < 768;
     let isHeroVisible = true;
+    let animationFrameId = null;
     const scene = new THREE.Scene();
 
     // Camera starts in "Deep Space" for Fly-In
@@ -92,9 +93,11 @@
     // Visibility Observer
     const heroSection = document.getElementById('home');
     if (heroSection) {
-        new IntersectionObserver((entries) => {
+        const heroObserver = new IntersectionObserver((entries) => {
             isHeroVisible = entries[0].isIntersecting;
-        }, { threshold: 0.05 }).observe(heroSection);
+            if (isHeroVisible) startAnimation();
+        }, { threshold: 0.05 });
+        heroObserver.observe(heroSection);
     }
 
     // --- ENHANCED WELCOME SEQUENCE LOGIC ---
@@ -102,7 +105,11 @@
     let introPhase = 0; // 0: Spark, 1: Fly-In, 2: Settling
 
     function animate() {
-        requestAnimationFrame(animate);
+        if (!isHeroVisible || document.hidden) {
+            animationFrameId = null;
+            return;
+        }
+        animationFrameId = requestAnimationFrame(animate);
 
         const time = performance.now() * 0.001;
 
@@ -142,7 +149,14 @@
 
         renderer.render(scene, camera);
     }
-    animate();
+    function startAnimation() {
+        if (animationFrameId === null && isHeroVisible && !document.hidden) {
+            animate();
+        }
+    }
+
+    document.addEventListener('visibilitychange', startAnimation);
+    startAnimation();
 
     window.addEventListener('resize', () => {
         camera.aspect = window.innerWidth / window.innerHeight;
