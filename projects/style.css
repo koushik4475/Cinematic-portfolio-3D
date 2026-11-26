@@ -472,3 +472,90 @@ header .navbar ul li a.active {
 
 /* Icon-only social links need a full 44px touch target as well. */
 .footer .box-container .box .share a { min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+
+
+/* PageClock project card — compact app-icon presentation */
+.pageclock-card .image {
+  background: radial-gradient(circle at 50% 45%, rgba(0, 229, 255, 0.09), #050505 68%);
+}
+
+.pageclock-card .image img {
+  width: min(100%, 22rem);
+  height: min(100%, 22rem);
+  object-fit: contain;
+  padding: 1.25rem;
+}
+
+/* Touch layouts: never hide card details behind a hover-only overlay. */
+@media (max-width: 768px) {
+  .work .box-container .grid-item {
+    width: 100%;
+    float: none;
+    padding: 1rem 0;
+  }
+
+  .work .box-container .box {
+    height: auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: none !important;
+  }
+
+  .work .box-container .box .image {
+    height: 18rem;
+    min-height: 18rem;
+    flex: 0 0 18rem;
+  }
+
+  .work .box-container .box .content {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    padding: 2rem;
+    transform: none !important;
+    background: linear-gradient(180deg, rgba(8, 8, 8, 0.96), #050505);
+  }
+
+  .work .box-container .box h2 {
+    font-size: clamp(1.9rem, 5vw, 2.3rem);
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+    margin-bottom: 1rem;
+  }
+
+  .work .box-container .box .desc {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .work .box-container .box .desc p {
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    font-size: 1.45rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .work .box-container .box .btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .work .box-container .box .btns .btn {
+    flex: 1 1 12rem;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .work .box-container .box:hover .image img {
+    transform: none;
+    filter: none;
+  }
+}
