@@ -278,7 +278,7 @@ header .navbar ul li a.active {
   transform: translateY(0);
 }
 
-.box h3 {
+.box h2 {
   font-family: var(--font-heading);
   font-size: 2.22rem;
   font-weight: 700;
@@ -289,7 +289,7 @@ header .navbar ul li a.active {
   gap: 1rem;
 }
 
-.box h3::before {
+.box h2::before {
   content: '';
   width: 4px;
   height: 2rem;
@@ -466,3 +466,6 @@ header .navbar ul li a.active {
 /* Accessible touch targets for project archive controls */
 .button-group .btn { padding-top: 1.2rem; padding-bottom: 1.2rem; }
 .box .btns .btn { min-height: 44px; }
+
+/* Keep footer navigation links comfortably tappable on touch devices */
+.footer .box-container .box > a { min-height: 44px; display: flex; align-items: center; padding: .5rem 0; }
