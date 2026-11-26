@@ -319,17 +319,6 @@ $(document).ready(function () {
 });
 
 /* ============================================
-   Tab Visibility
-   ============================================ */
-document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === "visible") {
-        document.title = "Koushik HY | Full-Stack Developer Portfolio";
-    } else {
-        document.title = "Thank you 😊";
-    }
-});
-
-/* ============================================
    Typed.js
    ============================================ */
 var typed = new Typed(".typing-text", {
