@@ -702,3 +702,184 @@ header .navbar ul li a.active {
     flex: 1 1 12rem;
   }
 }
+
+
+/* PageClock: isolated card component. Deliberately does not inherit .box,
+   .tilt, hover-overlay, or absolute-positioned project-card behaviour. */
+.work .box-container .pageclock-grid-item {
+  width: 33.3333%;
+}
+
+.work .box-container .pageclock-card {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+  background: #07090d;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.45);
+  transform: none !important;
+  cursor: default;
+}
+
+.work .box-container .pageclock-card__media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 24rem;
+  height: 24rem;
+  flex: 0 0 24rem;
+  padding: 2rem;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at center, rgba(0, 229, 255, 0.13), transparent 68%),
+    #080b10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.work .box-container .pageclock-card__icon {
+  display: block !important;
+  position: static !important;
+  width: 18rem !important;
+  height: 18rem !important;
+  min-width: 18rem;
+  min-height: 18rem;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  border-radius: 2.6rem;
+  transform: none !important;
+}
+
+.work .box-container .pageclock-card__body {
+  position: static !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.4rem;
+  width: 100%;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 2.2rem !important;
+  overflow: visible !important;
+  background: #07090d !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+.work .box-container .pageclock-card__body h2 {
+  display: block;
+  margin: 0 !important;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 2.1vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.work .box-container .pageclock-card__body h2::before {
+  content: none !important;
+}
+
+.work .box-container .pageclock-card__body p {
+  display: block !important;
+  margin: 0 !important;
+  color: var(--text-gray);
+  font-size: 1.45rem;
+  line-height: 1.75;
+  white-space: normal;
+  overflow: visible !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+}
+
+.work .box-container .pageclock-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: .5rem;
+}
+
+.work .box-container .pageclock-card__actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 11rem;
+  min-width: 0;
+  min-height: 4.4rem;
+  padding: 1rem 1.2rem;
+  border-radius: 1rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  white-space: normal;
+}
+
+@media (max-width: 992px) {
+  .work .box-container .pageclock-grid-item {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .work .box-container .pageclock-grid-item {
+    width: 100%;
+    float: none;
+    padding: 1rem 0;
+  }
+
+  .work .box-container .pageclock-card {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    border-radius: 1.8rem;
+  }
+
+  .work .box-container .pageclock-card__media {
+    height: 21rem;
+    min-height: 21rem;
+    flex-basis: 21rem;
+    padding: 1.5rem;
+  }
+
+  .work .box-container .pageclock-card__icon {
+    width: 17rem !important;
+    height: 17rem !important;
+    min-width: 17rem;
+    min-height: 17rem;
+  }
+
+  .work .box-container .pageclock-card__body {
+    padding: 1.8rem !important;
+    gap: 1.2rem;
+  }
+
+  .work .box-container .pageclock-card__body h2 {
+    font-size: clamp(2rem, 5.5vw, 2.4rem);
+    line-height: 1.3;
+  }
+
+  .work .box-container .pageclock-card__actions .btn {
+    flex: 1 1 12rem;
+  }
+}
