@@ -469,3 +469,6 @@ header .navbar ul li a.active {
 
 /* Keep footer navigation links comfortably tappable on touch devices */
 .footer .box-container .box > a { min-height: 44px; display: flex; align-items: center; padding: .5rem 0; }
+
+/* Icon-only social links need a full 44px touch target as well. */
+.footer .box-container .box .share a { min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
