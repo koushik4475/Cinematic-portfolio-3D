@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></noscript>
   <link id='favicon' rel="shortcut icon" href="../assets/images/koushik-hy-hero-nobg.png" type="image/x-png">
   <title>Projects by Koushik HY | Web, Android &amp; AI</title>
   <meta name="description" content="Explore web applications, Android apps, and AI projects built by Koushik HY, with project details, demos, and source code.">
@@ -52,8 +53,6 @@
 <body oncontextmenu="return false">
 
   <!-- Three.js Canvas -->
-  <canvas id="bg-canvas" class="google-anno-skip" data-google-anno-skip="true"></canvas>
-
   <!-- navbar starts -->
   <header data-google-anno-skip="true">
     <a href="../" class="logo">
@@ -98,7 +97,7 @@
       <div class="grid-item AI&amp;ML">
         <div class="box tilt">
           <div class="image">
-            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fopenagent-ai-hybrid-assistant.jpg&w=800&fm=webp&q=76" alt="OpenAgent — Hybrid AI" loading="lazy" decoding="async" />
+            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fopenagent-ai-hybrid-assistant.jpg&w=640&fm=webp&q=70" alt="OpenAgent — Hybrid AI" loading="eager" fetchpriority="high" decoding="async" />
           </div>
           <div class="content">
             <h2>OpenAgent — Hybrid AI</h2>
@@ -116,7 +115,7 @@
       <div class="grid-item web">
         <div class="box tilt">
           <div class="image">
-            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Ftravel-go-india-project-screenshot.png&w=800&fm=webp&q=76" alt="Travel GO-INDIA" loading="lazy" decoding="async" />
+            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Ftravel-go-india-project-screenshot.png&w=640&fm=webp&q=70" alt="Travel GO-INDIA" loading="lazy" decoding="async" />
           </div>
           <div class="content">
             <h2>Travel GO-INDIA</h2>
@@ -134,7 +133,7 @@
       <div class="grid-item app">
         <div class="box tilt">
           <div class="image">
-            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fandroid-cipher-app-screenshot.png&w=800&fm=webp&q=76" alt="Android Cipher" loading="lazy" />
+            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fandroid-cipher-app-screenshot.png&w=640&fm=webp&q=70" alt="Android Cipher" loading="lazy" />
           </div>
           <div class="content">
             <h2>Android Cipher</h2>
@@ -151,7 +150,7 @@
       <div class="grid-item web">
         <div class="box tilt">
           <div class="image">
-            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fdynamic-showcase-portfolio-screenshot.png&w=800&fm=webp&q=76" alt="Dynamic Showcase" loading="lazy" />
+            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fdynamic-showcase-portfolio-screenshot.png&w=640&fm=webp&q=70" alt="Dynamic Showcase" loading="lazy" />
           </div>
           <div class="content">
             <h2>Dynamic Showcase</h2>
@@ -167,7 +166,7 @@
       <div class="grid-item AI&amp;ML">
         <div class="box tilt">
           <div class="image">
-            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Ffocus-guard-ai-project-screenshot.png&w=800&fm=webp&q=76" alt="Focus Guard" loading="lazy" />
+            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Ffocus-guard-ai-project-screenshot.png&w=640&fm=webp&q=70" alt="Focus Guard" loading="lazy" />
           </div>
           <div class="content">
             <h2>Focus Guard</h2>
@@ -183,7 +182,7 @@
       <div class="grid-item web">
         <div class="box tilt">
           <div class="image">
-            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fcyber-calculator-project-screenshot.png&w=800&fm=webp&q=76" alt="Cyber Calculator" loading="lazy" />
+            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fcyber-calculator-project-screenshot.png&w=640&fm=webp&q=70" alt="Cyber Calculator" loading="lazy" />
           </div>
           <div class="content">
             <h2>Cyber Calculator</h2>
@@ -249,8 +248,6 @@
 
   <!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
   <!-- Three.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" crossorigin="anonymous"
-    referrerpolicy="no-referrer"></script>
   <!-- jquery cdn -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <!-- vanilla tilt.js links -->
