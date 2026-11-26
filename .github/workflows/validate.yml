@@ -1,0 +1,67 @@
+name: Validate portfolio
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate static portfolio
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Validate project catalogue and PageClock card
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from "node:fs";
+
+          const projects = JSON.parse(fs.readFileSync("projects/projects.json", "utf8"));
+          if (!Array.isArray(projects) || projects.length === 0) {
+            throw new Error("projects/projects.json must contain a non-empty array");
+          }
+
+          const pageClock = projects.find((project) =>
+            project.name?.toLowerCase().includes("pageclock")
+          );
+          if (!pageClock) throw new Error("PageClock is missing from the project catalogue");
+
+          for (const key of ["view", "code", "download"]) {
+            if (!/^https:\/\//.test(pageClock.links?.[key] ?? "")) {
+              throw new Error(`PageClock is missing a valid HTTPS ${key} link`);
+            }
+          }
+
+          const html = fs.readFileSync("projects/index.html", "utf8");
+          const css = fs.readFileSync("projects/style.css", "utf8");
+          for (const [label, pattern] of [
+            ["PageClock title", /PageClock[^<]*Reading/],
+            ["Live app link", /https:\/\/pageclock\.pages\.dev\//],
+            ["GitHub link", /https:\/\/github\.com\/koushik4475\/pageclock/],
+            ["Android release link", /releases\/latest/],
+          ]) {
+            if (!pattern.test(html)) throw new Error(`Projects page is missing ${label}`);
+          }
+
+          if (!css.includes(".pageclock-card")) {
+            throw new Error("PageClock responsive card styles are missing");
+          }
+
+          console.log(`Validated ${projects.length} projects and PageClock card links/styles.`);
+          NODE
