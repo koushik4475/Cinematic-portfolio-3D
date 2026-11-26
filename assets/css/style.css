@@ -423,7 +423,7 @@ header .navbar ul li a.active {
   padding: 2rem;
 }
 
-.home .content h2 {
+.home .content h1 {
   font-family: var(--font-heading);
   font-size: 6rem;
   font-weight: 900;
@@ -433,7 +433,7 @@ header .navbar ul li a.active {
   text-shadow: 0 0 40px rgba(0, 229, 255, 0.1);
 }
 
-.home .content h2 span {
+.home .content h1 span {
   background: var(--gradient-hot);
   background-size: 300% 100%;
   -webkit-background-clip: text;
@@ -2467,7 +2467,7 @@ iframe[title="chat widget"] {
     transform: rotate(180deg);
   }
 
-  .home .content h2 {
+  .home .content h1 {
     font-size: 4rem;
   }
 
@@ -2579,7 +2579,7 @@ iframe[title="chat widget"] {
     gap: 1rem;
   }
 
-  .home .content h2 {
+  .home .content h1 {
     font-size: 3.5rem;
   }
 
@@ -2598,7 +2598,7 @@ iframe[title="chat widget"] {
     margin-bottom: 3rem;
   }
 
-  .home .content h2 {
+  .home .content h1 {
     font-size: 3rem;
   }
 

@@ -1,2 +1,3 @@
-# Netlify Redirects and Header rewrites for clean routing and security
-/*    /index.html   200
+/privacy.html /privacy 301!
+/terms.html /terms 301!
+/* /index.html 200

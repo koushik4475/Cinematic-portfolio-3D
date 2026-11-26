@@ -7,21 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <link id='favicon' rel="shortcut icon" href="../assets/images/koushik-hy-hero-nobg.png" type="image/x-png">
-  <title>Projects | Portfolio KOUSHIK HY</title>
-  <meta name="description" content="Projects by Koushik HY (koushik4475) — full-stack web apps, Android apps, and AI projects. Explore the portfolio work of Koushik HY from Mysore, Karnataka, India.">
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></noscript>
+  <link id="favicon" rel="icon" href="/assets/images/koushik-hy-wave-favicon.png" type="image/png">
+  <title>Projects by Koushik HY | Web, Android &amp; AI</title>
+  <meta name="description" content="Explore web applications, Android apps, and AI projects built by Koushik HY, with project details, demos, and source code.">
   <meta name="author" content="Koushik HY">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://koushikhy.netlify.app/projects/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Projects | Koushik HY (koushik4475)">
-  <meta property="og:description" content="Explore full-stack, Android, and AI projects built by Koushik HY.">
+  <meta property="og:title" content="Projects by Koushik HY | Web, Android &amp; AI">
+  <meta property="og:description" content="Explore web applications, Android apps, and AI projects built by Koushik HY, with project details, demos, and source code.">
   <meta property="og:url" content="https://koushikhy.netlify.app/projects/">
   <meta property="og:image" content="https://koushikhy.netlify.app/assets/images/koushik-hy-fullstack-developer-hero.png">
   <meta property="og:site_name" content="Koushik HY's Portfolio">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Projects | Koushik HY (koushik4475)">
+  <meta name="twitter:title" content="Projects by Koushik HY | Web, Android &amp; AI">
   <meta name="twitter:description" content="Explore full-stack, Android, and AI projects built by Koushik HY.">
   <meta name="twitter:image" content="https://koushikhy.netlify.app/assets/images/koushik-hy-fullstack-developer-hero.png">
   <script type="application/ld+json">
@@ -52,8 +53,6 @@
 <body oncontextmenu="return false">
 
   <!-- Three.js Canvas -->
-  <canvas id="bg-canvas" class="google-anno-skip" data-google-anno-skip="true"></canvas>
-
   <!-- navbar starts -->
   <header data-google-anno-skip="true">
     <a href="../" class="logo">
@@ -79,11 +78,12 @@
   <!-- navbar ends -->
 
   <!-- work project section starts -->
+  <main id="main-content">
   <section class="work" id="work">
 
-    <h2 class="heading">
+    <h1 class="heading">
       <i class="fas fa-laptop-code"></i> Projects <span>Archive</span>
-    </h2>
+    </h1>
 
     <div id="filters" class="button-group">
       <button class="btn is-checked" data-filter="*">All Tech Stack</button>
@@ -97,10 +97,10 @@
       <div class="grid-item AI&amp;ML">
         <div class="box tilt">
           <div class="image">
-            <img draggable="false" src="../assets/images/projects/openagent-ai-hybrid-assistant.jpg" alt="OpenAgent — Hybrid AI" loading="lazy" />
+            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fopenagent-ai-hybrid-assistant.jpg&w=640&fm=webp&q=70" alt="OpenAgent — Hybrid AI" loading="eager" fetchpriority="high" decoding="async" />
           </div>
           <div class="content">
-            <h3>OpenAgent — Hybrid AI</h3>
+            <h2>OpenAgent — Hybrid AI</h2>
             <div class="desc">
               <p>A next-gen AI assistant combining cloud intelligence (Groq Llama 3.3 70B) with local privacy (Ollama Phi-3). Features web search, file parsing, OCR vision, RAG memory, and a cyberpunk UI.</p>
               <div class="btns">
@@ -115,15 +115,15 @@
       <div class="grid-item web">
         <div class="box tilt">
           <div class="image">
-            <img draggable="false" src="../assets/images/projects/travel-go-india-project-screenshot.png" alt="Travel GO-INDIA" loading="lazy" />
+            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Ftravel-go-india-project-screenshot.png&w=640&fm=webp&q=70" alt="Travel GO-INDIA" loading="lazy" decoding="async" />
           </div>
           <div class="content">
-            <h3>Travel GO-INDIA</h3>
+            <h2>Travel GO-INDIA</h2>
             <div class="desc">
               <p>Discover the vibrant tapestry of India through an immersive travel experience website featuring rich regional culture and trip planning.</p>
               <div class="btns">
                 <a href="https://gooindia.netlify.app" class="btn btn--view" target="_blank"><i class="fas fa-eye"></i> View</a>
-                <a href="https://github.com/koushik4475/gooindia-.git" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
+                <a href="https://github.com/koushik4475/gooindia-" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
               </div>
             </div>
           </div>
@@ -133,15 +133,14 @@
       <div class="grid-item app">
         <div class="box tilt">
           <div class="image">
-            <img draggable="false" src="../assets/images/projects/android-cipher-app-screenshot.png" alt="Android Cipher" loading="lazy" />
+            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fandroid-cipher-app-screenshot.png&w=640&fm=webp&q=70" alt="Android Cipher" loading="lazy" />
           </div>
           <div class="content">
-            <h3>Android Cipher</h3>
+            <h2>Android Cipher</h2>
             <div class="desc">
               <p>A cipher code generator and decrypter using blowfish algorithm compatible with any versions of Android and iOS operating system.</p>
               <div class="btns">
-                <a href="https://github.com/koushik4475/android-cipher?tab=readme-ov-file" class="btn btn--view" target="_blank"><i class="fas fa-eye"></i> View</a>
-                <a href="https://github.com/koushik4475/android-cipher.git" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
+                <a href="https://github.com/koushik4475/android-cipher" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
               </div>
             </div>
           </div>
@@ -151,14 +150,13 @@
       <div class="grid-item web">
         <div class="box tilt">
           <div class="image">
-            <img draggable="false" src="../assets/images/projects/dynamic-showcase-portfolio-screenshot.png" alt="Dynamic Showcase" loading="lazy" />
+            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fdynamic-showcase-portfolio-screenshot.png&w=640&fm=webp&q=70" alt="Dynamic Showcase" loading="lazy" />
           </div>
           <div class="content">
-            <h3>Dynamic Showcase</h3>
+            <h2>Dynamic Showcase</h2>
             <div class="desc">
               <p>Next-level responsive portfolio using gyroscopic movement tracking system with React/JS, SCSS, CSS.</p>
               <div class="btns">
-                <a href="https://koushikhy.netlify.app" class="btn btn--view" target="_blank"><i class="fas fa-eye"></i> View</a>
               </div>
             </div>
           </div>
@@ -168,69 +166,13 @@
       <div class="grid-item AI&amp;ML">
         <div class="box tilt">
           <div class="image">
-            <img draggable="false" src="../assets/images/projects/focus-guard-ai-project-screenshot.png" alt="Focus Guard" loading="lazy" />
+            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Ffocus-guard-ai-project-screenshot.png&w=640&fm=webp&q=70" alt="Focus Guard" loading="lazy" />
           </div>
           <div class="content">
-            <h3>Focus Guard</h3>
+            <h2>Focus Guard</h2>
             <div class="desc">
               <p>A sophisticated system designed to detect distraction using face algorithm with real-time AI &amp; ML computer vision.</p>
               <div class="btns">
-                <a href="https://github.com/koushik4475/focus-guard-.git" class="btn btn--view" target="_blank"><i class="fas fa-eye"></i> View</a>
-                <a href="https://github.com/koushik4475/focus-guard-.git" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-item app">
-        <div class="box tilt">
-          <div class="image">
-            <img draggable="false" src="../assets/images/projects/alarm-clock-android-app-screenshot.png" alt="Alarm Clock App" loading="lazy" />
-          </div>
-          <div class="content">
-            <h3>Alarm Clock App</h3>
-            <div class="desc">
-              <p>A vintage-themed alarm clock app built using Kotlin, Java, SDK, Gradle, XML &amp; JDK supporting Android and iOS.</p>
-              <div class="btns">
-                <a href="https://github.com/koushik4475/ALARM-HY_KOUSHIK.git" class="btn btn--view" target="_blank"><i class="fas fa-eye"></i> View</a>
-                <a href="https://github.com/koushik4475/ALARM-HY_KOUSHIK.git" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-item to-do">
-        <div class="box tilt">
-          <div class="image">
-            <img draggable="false" src="../assets/images/projects/todo-app-kotlin-screenshot.png" alt="To-Do List App" loading="lazy" />
-          </div>
-          <div class="content">
-            <h3>To-Do List App</h3>
-            <div class="desc">
-              <p>A task management application built using Kotlin, Java, SDK, Gradle, JDK, XML supporting Android and iOS productivity.</p>
-              <div class="btns">
-                <a href="https://github.com/koushik4475/TO-DO-APPLICATION-HY_KOUSHIK.git" class="btn btn--view" target="_blank"><i class="fas fa-eye"></i> View</a>
-                <a href="https://github.com/koushik4475/TO-DO-APPLICATION-HY_KOUSHIK.git" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-item application">
-        <div class="box tilt">
-          <div class="image">
-            <img draggable="false" src="../assets/images/projects/visiting-profile-web-app-screenshot.png" alt="Visiting Profile" loading="lazy" />
-          </div>
-          <div class="content">
-            <h3>Visiting Profile</h3>
-            <div class="desc">
-              <p>An interactive digital visiting card web application built with HTML, CSS &amp; JavaScript for modern networking.</p>
-              <div class="btns">
-                <a href="https://hykoushik.netlify.app" class="btn btn--view" target="_blank"><i class="fas fa-eye"></i> View</a>
-                <a href="https://github.com/koushik4475/interactive-visiting-card-.git" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
               </div>
             </div>
           </div>
@@ -240,32 +182,15 @@
       <div class="grid-item web">
         <div class="box tilt">
           <div class="image">
-            <img draggable="false" src="../assets/images/projects/smart-city-waste-management-screenshot.png" alt="Smart City Waste Management" loading="lazy" />
+            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fcyber-calculator-project-screenshot.png&w=640&fm=webp&q=70" alt="Cyber Calculator" loading="lazy" />
           </div>
           <div class="content">
-            <h3>Smart City Waste Management</h3>
-            <div class="desc">
-              <p>A smart city waste management system with AI assistant using route optimisation — developed in a 24-hour hackathon.</p>
-              <div class="btns">
-                <a href="https://github.com/koushik4475/focus-guard-.git" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-item web">
-        <div class="box tilt">
-          <div class="image">
-            <img draggable="false" src="../assets/images/projects/cyber-calculator-project-screenshot.png" alt="Cyber Calculator" loading="lazy" />
-          </div>
-          <div class="content">
-            <h3>Cyber Calculator</h3>
+            <h2>Cyber Calculator</h2>
             <div class="desc">
               <p>A sleek, cyberpunk-themed calculator built with JavaScript, CSS and SCSS for quick computational tasks.</p>
               <div class="btns">
                 <a href="https://cybercal.netlify.app" class="btn btn--view" target="_blank"><i class="fas fa-eye"></i> View</a>
-                <a href="https://github.com/koushik4475/calculator.git" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
+                <a href="https://github.com/koushik4475/calculator" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
               </div>
             </div>
           </div>
@@ -282,6 +207,7 @@
 
   </section>
   <!-- work project section ends -->
+  </main>
 
   <!-- scroll top btn -->
   <a href="#work" aria-label="Scroll to top" class="fas fa-angle-up" id="scroll-top"></a>
@@ -300,8 +226,8 @@
         <a href="../#about"><i class="fas fa-chevron-right"></i> About</a>
         <a href="../projects/"><i class="fas fa-chevron-right"></i> Projects</a>
         <a href="../experience/"><i class="fas fa-chevron-right"></i> Experience</a>
-        <a href="/privacy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a>
-        <a href="/terms.html"><i class="fas fa-chevron-right"></i> Terms of Service</a>
+        <a href="/privacy"><i class="fas fa-chevron-right"></i> Privacy Policy</a>
+        <a href="/terms"><i class="fas fa-chevron-right"></i> Terms of Service</a>
       </div>
 
       <div class="box">
@@ -316,14 +242,12 @@
       </div>
     </div>
 
-    <h1 class="credit">&copy; 2026 Koushik HY. All rights reserved. | Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/koushik-hy-3740a125b" target="_blank" rel="noopener noreferrer">Koushik HY</a></h1>
+    <p class="credit">&copy; 2026 Koushik HY. All rights reserved. | Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/koushik-hy-3740a125b" target="_blank" rel="noopener noreferrer">Koushik HY</a></p>
   </section>
   <!-- footer section ends -->
 
   <!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
   <!-- Three.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" crossorigin="anonymous"
-    referrerpolicy="no-referrer"></script>
   <!-- jquery cdn -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <!-- vanilla tilt.js links -->

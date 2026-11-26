@@ -58,12 +58,12 @@ section{
 }
 .heading{
   font-size: 3.5rem;
-  color: rgb(96, 17, 242);
+  color: #ffffff;
   font-weight: 800;
   text-align: center;
 }
 .heading span{
-  color: rgb(174, 0, 255);
+  color: #00e5ff;
 }
 header .logo{
   font-size: 1.9rem;
@@ -404,6 +404,10 @@ header .navbar ul li a:hover{
 }
 .footer .credit a{
   color: #77ff00;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 .footer .fa{
     color: #E90606;

@@ -319,17 +319,6 @@ $(document).ready(function () {
 });
 
 /* ============================================
-   Tab Visibility
-   ============================================ */
-document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === "visible") {
-        document.title = "Koushik HY | Full-Stack Developer Portfolio";
-    } else {
-        document.title = "Thank you 😊";
-    }
-});
-
-/* ============================================
    Typed.js
    ============================================ */
 var typed = new Typed(".typing-text", {
@@ -373,39 +362,42 @@ function showSkills(skills) {
     container.innerHTML = html;
 }
 
-function showProjects(projects) {
-    let container = document.querySelector("#work .box-container");
-    let html = "";
-    const featured = [
-        'OpenAgent — Hybrid AI',
-        'Travel GO-INDIA',
-        'Android Cipher',
-        'Focus Guard',
-        'Visiting Profile',
-        'Smart City Waste Management'
-    ];
-    const orderedProjects = featured
-        .map(name => projects.find(p => p.name === name))
-        .filter(Boolean);
+function safeProjectUrl(value) {
+    try {
+        const url = new URL(value);
+        return ['https:', 'http:'].includes(url.protocol) ? url.href.replace(/\.git$/, '') : '';
+    } catch {
+        return '';
+    }
+}
 
+function showProjects(projects) {
+    const container = document.querySelector('#work .box-container');
+    if (!container) return;
+    let html = '';
+    const featured = [
+        'OpenAgent — Hybrid AI', 'Travel GO-INDIA', 'Android Cipher',
+        'Focus Guard', 'Visiting Profile', 'Smart City Waste Management'
+    ];
+    const orderedProjects = featured.map(name => projects.find(project => project.name === name)).filter(Boolean);
     orderedProjects.forEach(project => {
         const ext = project.imageExt || 'png';
+        const imagePath = `/assets/images/projects/${project.image}.${ext}`;
+        const imageUrl = `/.netlify/images?url=${encodeURIComponent(imagePath)}&w=720&fm=webp&q=76`;
+        const viewUrl = safeProjectUrl(project.links?.view);
+        const codeUrl = safeProjectUrl(project.links?.code);
+        const actions = [
+            viewUrl ? `<a href="${viewUrl}" class="btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-eye"></i> View</a>` : '',
+            codeUrl ? `<a href="${codeUrl}" class="btn" target="_blank" rel="noopener noreferrer">Code <i class="fas fa-code"></i></a>` : ''
+        ].filter(Boolean).join('');
         html += `
         <div class="box">
             <div class="image">
-                <img draggable="false" src="./assets/images/projects/${project.image}.${ext}" alt="${project.name} - project by Koushik HY" loading="lazy" />
+                <img draggable="false" src="${imageUrl}" alt="${project.name} - project by Koushik HY" loading="lazy" decoding="async" />
             </div>
             <div class="content">
-                <div class="tag">
-                    <h3>${project.name}</h3>
-                </div>
-                <div class="desc">
-                    <p>${project.desc}</p>
-                    <div class="btns">
-                        <a href="${project.links.view}" class="btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-eye"></i> View</a>
-                        <a href="${project.links.code}" class="btn" target="_blank" rel="noopener noreferrer">Code <i class="fas fa-code"></i></a>
-                    </div>
-                </div>
+                <div class="tag"><h3>${project.name}</h3></div>
+                <div class="desc"><p>${project.desc}</p><div class="btns">${actions}</div></div>
             </div>
         </div>`;
     });
@@ -487,12 +479,18 @@ document.addEventListener('DOMContentLoaded', () => {
    ============================================ */
 var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 var tawkLoaded = false, tawkOpenPending = false;
-(function () {
-    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-    s1.async = true; s1.src = 'https://embed.tawk.to/65956f8e8d261e1b5f4ec1ab/1hj7rnibr';
-    s1.charset = 'UTF-8'; s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-})();
+var tawkLoading = false;
+function loadTawk() {
+    if (tawkLoading || tawkLoaded) return;
+    tawkLoading = true;
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = 'https://embed.tawk.to/65956f8e8d261e1b5f4ec1ab/1hj7rnibr';
+    script.charset = 'UTF-8';
+    script.setAttribute('crossorigin', '*');
+    script.onerror = function () { tawkLoading = false; tawkOpenPending = false; };
+    document.head.appendChild(script);
+}
 
 // Force hide Tawk.to bubble via CSS as a robust backup
 (function() {
@@ -553,6 +551,7 @@ document.getElementById('master-robot-orb').addEventListener('click', () => {
     if (!tawkLoaded) {
         // Clicked before the Tawk script finished loading — open it from onLoad.
         tawkOpenPending = true;
+        loadTawk();
         return;
     }
     if (typeof Tawk_API.isChatMaximized === 'function' && Tawk_API.isChatMaximized()) {
