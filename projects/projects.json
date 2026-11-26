@@ -1,5 +1,18 @@
 [
   {
+    "name": "PageClock — Reading & Focus Tracker",
+    "desc": "An offline-first reading and focus tracker built with Flutter, Riverpod, Drift (SQLite) and fl_chart. Track reading sessions, run Pomodoro focus timers, review study analytics, personalize clock themes, and export PDF, CSV or JSON reports. Native mobile use stays local; web cloud sync is optional.",
+    "image": "pageclock",
+    "imageExt": "png",
+    "imageUrl": "https://pageclock.pages.dev/icons/Icon-512.png",
+    "category": "web app",
+    "links": {
+      "view": "https://pageclock.pages.dev/",
+      "code": "https://github.com/koushik4475/pageclock",
+      "download": "https://github.com/koushik4475/pageclock/releases/latest"
+    }
+  },
+  {
     "name": "OpenAgent — Hybrid AI",
     "desc": "A next-gen AI assistant combining cloud intelligence (Groq Llama 3.3 70B) with local privacy (Ollama Phi-3). Features web search, file parsing, OCR vision, RAG memory, and a cyberpunk UI.",
     "image": "openagent-ai-hybrid-assistant",
