@@ -376,19 +376,32 @@ function showProjects(projects) {
     if (!container) return;
     let html = '';
     const featured = [
-        'OpenAgent — Hybrid AI', 'Travel GO-INDIA', 'Android Cipher',
-        'Focus Guard', 'Visiting Profile', 'Smart City Waste Management'
+        'PageClock — Reading & Focus Tracker', 'OpenAgent — Hybrid AI', 'Travel GO-INDIA',
+        'Android Cipher', 'Focus Guard', 'Visiting Profile', 'Smart City Waste Management'
     ];
     const orderedProjects = featured.map(name => projects.find(project => project.name === name)).filter(Boolean);
     orderedProjects.forEach(project => {
         const ext = project.imageExt || 'png';
         const imagePath = `/assets/images/projects/${project.image}.${ext}`;
-        const imageUrl = `/.netlify/images?url=${encodeURIComponent(imagePath)}&w=720&fm=webp&q=76`;
+        let imageUrl = `/.netlify/images?url=${encodeURIComponent(imagePath)}&w=720&fm=webp&q=76`;
+        // Allow the verified PageClock app icon as a hosted project thumbnail.
+        if (project.imageUrl) {
+            try {
+                const externalImage = new URL(project.imageUrl);
+                if (externalImage.protocol === 'https:' && externalImage.hostname === 'pageclock.pages.dev') {
+                    imageUrl = externalImage.href;
+                }
+            } catch {
+                // Keep the optimized local image fallback for invalid external URLs.
+            }
+        }
         const viewUrl = safeProjectUrl(project.links?.view);
         const codeUrl = safeProjectUrl(project.links?.code);
+        const downloadUrl = safeProjectUrl(project.links?.download);
         const actions = [
             viewUrl ? `<a href="${viewUrl}" class="btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-eye"></i> View</a>` : '',
-            codeUrl ? `<a href="${codeUrl}" class="btn" target="_blank" rel="noopener noreferrer">Code <i class="fas fa-code"></i></a>` : ''
+            codeUrl ? `<a href="${codeUrl}" class="btn" target="_blank" rel="noopener noreferrer">Code <i class="fas fa-code"></i></a>` : '',
+            downloadUrl ? `<a href="${downloadUrl}" class="btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-android"></i> Android APK</a>` : ''
         ].filter(Boolean).join('');
         html += `
         <div class="box">
