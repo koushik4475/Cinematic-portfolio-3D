@@ -17,17 +17,6 @@ $(document).ready(function(){
     });
 });
 
-/* ===== SCROLL REVEAL ANIMATION ===== */
-const srtop = ScrollReveal({
-    origin: 'top',
-    distance: '80px',
-    duration: 1000,
-    reset: false
-});
-
-/* SCROLL EXPERIENCE */
-srtop.reveal('.experience .timeline',{delay: 400});
-srtop.reveal('.experience .timeline .container',{interval: 400}); 
 
 
 /* ============================================
@@ -61,11 +50,6 @@ function loadTawk() {
     window.addEventListener('pointerdown', onFirstInteraction, { once: true, passive: true });
     window.addEventListener('scroll', onFirstInteraction, { once: true, passive: true });
     window.addEventListener('keydown', onFirstInteraction, { once: true, passive: true });
-    if (typeof window.requestIdleCallback === 'function') {
-        window.requestIdleCallback(loadTawk, { timeout: 4000 });
-    } else {
-        setTimeout(loadTawk, 3500);
-    }
 })();
 
 Tawk_API.onLoad = function () {
