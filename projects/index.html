@@ -38,22 +38,17 @@
   <meta name="google-adsense-account" content="ca-pub-8878096861679129">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8878096861679129"
     crossorigin="anonymous"></script>
-
-  <!-- CSS to Hide Tawk.to Bubble -->
   <style>
-    .tawk-min-container, .tawk-badge, .tawk-button { 
-        display: none !important; 
-        visibility: hidden !important; 
-        opacity: 0 !important; 
-        pointer-events: none !important;
+    .tawk-min-container, .tawk-badge, .tawk-button {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
     }
   </style>
 </head>
 
 <body oncontextmenu="return false">
-
-  <!-- Three.js Canvas -->
-  <!-- navbar starts -->
   <header data-google-anno-skip="true">
     <a href="../" class="logo">
       <div class="logo-box">
@@ -61,7 +56,6 @@
         <span>KOUSHIK</span>
       </div>
     </a>
-
     <div id="menu" class="fas fa-bars-staggered"></div>
     <nav class="navbar">
       <ul>
@@ -75,170 +69,160 @@
       </ul>
     </nav>
   </header>
-  <!-- navbar ends -->
 
-  <!-- work project section starts -->
   <main id="main-content">
-  <section class="work" id="work">
+    <section class="work" id="work">
+      <h1 class="heading">
+        <i class="fas fa-laptop-code"></i> Projects <span>Archive</span>
+      </h1>
 
-    <h1 class="heading">
-      <i class="fas fa-laptop-code"></i> Projects <span>Archive</span>
-    </h1>
+      <div id="filters" class="button-group">
+        <button class="btn is-checked" data-filter="*">All Tech Stack</button>
+        <button class="btn" data-filter=".web">Web Apps</button>
+        <button class="btn" data-filter=".app">Mobile Apps</button>
+        <button class="btn" data-filter=".AI\\&ML">AI &amp; ML</button>
+        <button class="btn" data-filter=".to-do">Productivity</button>
+      </div>
 
-    <div id="filters" class="button-group">
-      <button class="btn is-checked" data-filter="*">All Tech Stack</button>
-      <button class="btn" data-filter=".web">Web Apps</button>
-      <button class="btn" data-filter=".app">Mobile Apps</button>
-      <button class="btn" data-filter=".AI\\&ML">AI &amp; ML</button>
-      <button class="btn" data-filter=".to-do">Productivity</button>
-    </div>
-
-    <div class="box-container">
-      <div class="grid-item web app">
-        <div class="box tilt pageclock-card">
-          <div class="image">
-            <img draggable="false" src="https://pageclock.pages.dev/icons/Icon-512.png" alt="PageClock app icon — offline-first reading and focus tracker" loading="eager" fetchpriority="high" decoding="async" />
+      <div class="box-container">
+        <div class="grid-item web app">
+          <div class="box tilt pageclock-card">
+            <div class="image">
+              <img class="pageclock-app-icon" draggable="false"
+                src="https://raw.githubusercontent.com/koushik4475/pageclock/main/web/icons/Icon-512.png"
+                onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/koushik4475/pageclock/main/web/icons/Icon-maskable-512.png';"
+                alt="PageClock app icon" width="512" height="512" loading="eager" fetchpriority="high" decoding="async" />
+            </div>
+            <div class="content">
+              <h2>PageClock — Reading &amp; Focus Tracker</h2>
+              <div class="desc">
+                <p>An offline-first reading and focus tracker built with Flutter, Riverpod, Drift (SQLite) and fl_chart. Track reading sessions, run Pomodoro focus timers, review study analytics, personalize clock themes, and export PDF, CSV or JSON reports. Native mobile use stays local; web cloud sync is optional.</p>
+                <div class="btns">
+                  <a href="https://pageclock.pages.dev/" class="btn btn--view" target="_blank" rel="noopener noreferrer"><i class="fas fa-eye"></i> Live App</a>
+                  <a href="https://github.com/koushik4475/pageclock" class="btn btn--code" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i> GitHub</a>
+                  <a href="https://github.com/koushik4475/pageclock/releases/latest" class="btn btn--code" target="_blank" rel="noopener noreferrer"><i class="fab fa-android"></i> Android APK</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="content">
-            <h2>PageClock — Reading &amp; Focus Tracker</h2>
-            <div class="desc">
-              <p>An offline-first reading and focus tracker built with Flutter, Riverpod, Drift (SQLite) and fl_chart. Track reading sessions, run Pomodoro focus timers, review study analytics, personalize clock themes, and export PDF, CSV or JSON reports. Native mobile use stays local; web cloud sync is optional.</p>
-              <div class="btns">
-                <a href="https://pageclock.pages.dev/" class="btn btn--view" target="_blank" rel="noopener noreferrer"><i class="fas fa-eye"></i> Live App</a>
-                <a href="https://github.com/koushik4475/pageclock" class="btn btn--code" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i> GitHub</a>
-                <a href="https://github.com/koushik4475/pageclock/releases/latest" class="btn btn--code" target="_blank" rel="noopener noreferrer"><i class="fab fa-android"></i> Android APK</a>
+        </div>
+
+        <div class="grid-item AI&amp;ML">
+          <div class="box tilt">
+            <div class="image">
+              <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fopenagent-ai-hybrid-assistant.jpg&w=640&fm=webp&q=70" alt="OpenAgent — Hybrid AI" loading="eager" fetchpriority="high" decoding="async" />
+            </div>
+            <div class="content">
+              <h2>OpenAgent — Hybrid AI</h2>
+              <div class="desc">
+                <p>A next-gen AI assistant combining cloud intelligence (Groq Llama 3.3 70B) with local privacy (Ollama Phi-3). Features web search, file parsing, OCR vision, RAG memory, and a cyberpunk UI.</p>
+                <div class="btns">
+                  <a href="https://huggingface.co/spaces/koushik4475/openagent" class="btn btn--view" target="_blank"><i class="fas fa-eye"></i> View</a>
+                  <a href="https://github.com/koushik4475/open-agent" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-item web">
+          <div class="box tilt">
+            <div class="image">
+              <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Ftravel-go-india-project-screenshot.png&w=640&fm=webp&q=70" alt="Travel GO-INDIA" loading="lazy" decoding="async" />
+            </div>
+            <div class="content">
+              <h2>Travel GO-INDIA</h2>
+              <div class="desc">
+                <p>Discover the vibrant tapestry of India through an immersive travel experience website featuring rich regional culture and trip planning.</p>
+                <div class="btns">
+                  <a href="https://gooindia.netlify.app" class="btn btn--view" target="_blank"><i class="fas fa-eye"></i> View</a>
+                  <a href="https://github.com/koushik4475/gooindia-" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-item app">
+          <div class="box tilt">
+            <div class="image">
+              <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fandroid-cipher-app-screenshot.png&w=640&fm=webp&q=70" alt="Android Cipher" loading="lazy" />
+            </div>
+            <div class="content">
+              <h2>Android Cipher</h2>
+              <div class="desc">
+                <p>A cipher code generator and decrypter using blowfish algorithm compatible with any versions of Android and iOS operating system.</p>
+                <div class="btns">
+                  <a href="https://github.com/koushik4475/android-cipher" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-item web">
+          <div class="box tilt">
+            <div class="image">
+              <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fdynamic-showcase-portfolio-screenshot.png&w=640&fm=webp&q=70" alt="Dynamic Showcase" loading="lazy" />
+            </div>
+            <div class="content">
+              <h2>Dynamic Showcase</h2>
+              <div class="desc">
+                <p>Next-level responsive portfolio using gyroscopic movement tracking system with React/JS, SCSS, CSS.</p>
+                <div class="btns"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-item AI&amp;ML">
+          <div class="box tilt">
+            <div class="image">
+              <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Ffocus-guard-ai-project-screenshot.png&w=640&fm=webp&q=70" alt="Focus Guard" loading="lazy" />
+            </div>
+            <div class="content">
+              <h2>Focus Guard</h2>
+              <div class="desc">
+                <p>A sophisticated system designed to detect distraction using face algorithm with real-time AI &amp; ML computer vision.</p>
+                <div class="btns"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-item web">
+          <div class="box tilt">
+            <div class="image">
+              <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fcyber-calculator-project-screenshot.png&w=640&fm=webp&q=70" alt="Cyber Calculator" loading="lazy" />
+            </div>
+            <div class="content">
+              <h2>Cyber Calculator</h2>
+              <div class="desc">
+                <p>A sleek, cyberpunk-themed calculator built with JavaScript, CSS and SCSS for quick computational tasks.</p>
+                <div class="btns">
+                  <a href="https://cybercal.netlify.app" class="btn btn--view" target="_blank"><i class="fas fa-eye"></i> View</a>
+                  <a href="https://github.com/koushik4475/calculator" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="grid-item AI&amp;ML">
-        <div class="box tilt">
-          <div class="image">
-            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fopenagent-ai-hybrid-assistant.jpg&w=640&fm=webp&q=70" alt="OpenAgent — Hybrid AI" loading="eager" fetchpriority="high" decoding="async" />
-          </div>
-          <div class="content">
-            <h2>OpenAgent — Hybrid AI</h2>
-            <div class="desc">
-              <p>A next-gen AI assistant combining cloud intelligence (Groq Llama 3.3 70B) with local privacy (Ollama Phi-3). Features web search, file parsing, OCR vision, RAG memory, and a cyberpunk UI.</p>
-              <div class="btns">
-                <a href="https://huggingface.co/spaces/koushik4475/openagent" class="btn btn--view" target="_blank"><i class="fas fa-eye"></i> View</a>
-                <a href="https://github.com/koushik4475/open-agent" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="backbtn">
+        <a href="../#work" class="btn"><i class="fas fa-arrow-left"></i><span>Back Home</span></a>
       </div>
-
-      <div class="grid-item web">
-        <div class="box tilt">
-          <div class="image">
-            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Ftravel-go-india-project-screenshot.png&w=640&fm=webp&q=70" alt="Travel GO-INDIA" loading="lazy" decoding="async" />
-          </div>
-          <div class="content">
-            <h2>Travel GO-INDIA</h2>
-            <div class="desc">
-              <p>Discover the vibrant tapestry of India through an immersive travel experience website featuring rich regional culture and trip planning.</p>
-              <div class="btns">
-                <a href="https://gooindia.netlify.app" class="btn btn--view" target="_blank"><i class="fas fa-eye"></i> View</a>
-                <a href="https://github.com/koushik4475/gooindia-" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-item app">
-        <div class="box tilt">
-          <div class="image">
-            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fandroid-cipher-app-screenshot.png&w=640&fm=webp&q=70" alt="Android Cipher" loading="lazy" />
-          </div>
-          <div class="content">
-            <h2>Android Cipher</h2>
-            <div class="desc">
-              <p>A cipher code generator and decrypter using blowfish algorithm compatible with any versions of Android and iOS operating system.</p>
-              <div class="btns">
-                <a href="https://github.com/koushik4475/android-cipher" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-item web">
-        <div class="box tilt">
-          <div class="image">
-            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fdynamic-showcase-portfolio-screenshot.png&w=640&fm=webp&q=70" alt="Dynamic Showcase" loading="lazy" />
-          </div>
-          <div class="content">
-            <h2>Dynamic Showcase</h2>
-            <div class="desc">
-              <p>Next-level responsive portfolio using gyroscopic movement tracking system with React/JS, SCSS, CSS.</p>
-              <div class="btns">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-item AI&amp;ML">
-        <div class="box tilt">
-          <div class="image">
-            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Ffocus-guard-ai-project-screenshot.png&w=640&fm=webp&q=70" alt="Focus Guard" loading="lazy" />
-          </div>
-          <div class="content">
-            <h2>Focus Guard</h2>
-            <div class="desc">
-              <p>A sophisticated system designed to detect distraction using face algorithm with real-time AI &amp; ML computer vision.</p>
-              <div class="btns">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-item web">
-        <div class="box tilt">
-          <div class="image">
-            <img draggable="false" src="/.netlify/images?url=%2Fassets%2Fimages%2Fprojects%2Fcyber-calculator-project-screenshot.png&w=640&fm=webp&q=70" alt="Cyber Calculator" loading="lazy" />
-          </div>
-          <div class="content">
-            <h2>Cyber Calculator</h2>
-            <div class="desc">
-              <p>A sleek, cyberpunk-themed calculator built with JavaScript, CSS and SCSS for quick computational tasks.</p>
-              <div class="btns">
-                <a href="https://cybercal.netlify.app" class="btn btn--view" target="_blank"><i class="fas fa-eye"></i> View</a>
-                <a href="https://github.com/koushik4475/calculator" class="btn btn--code" target="_blank"><i class="fas fa-code"></i> GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="backbtn">
-      <a href="../#work" class="btn">
-        <i class="fas fa-arrow-left"></i>
-        <span>Back Home</span>
-      </a>
-    </div>
-
-  </section>
-  <!-- work project section ends -->
+    </section>
   </main>
 
-  <!-- scroll top btn -->
   <a href="#work" aria-label="Scroll to top" class="fas fa-angle-up" id="scroll-top"></a>
 
-  <!-- footer section starts -->
   <section class="footer">
     <div class="box-container">
       <div class="box">
         <h3>Koushik HY's Portfolio</h3>
         <p>A cinematic digital portfolio showcasing full-stack engineering, 3D WebGL graphics, and scalable application architecture.</p>
       </div>
-
       <div class="box">
         <h3>Quick Links</h3>
         <a href="../#home"><i class="fas fa-chevron-right"></i> Home</a>
@@ -248,7 +232,6 @@
         <a href="/privacy"><i class="fas fa-chevron-right"></i> Privacy Policy</a>
         <a href="/terms"><i class="fas fa-chevron-right"></i> Terms of Service</a>
       </div>
-
       <div class="box">
         <h3>Contact Info</h3>
         <p><i class="fas fa-envelope"></i> koushik4475@gmail.com</p>
@@ -260,25 +243,13 @@
         </div>
       </div>
     </div>
-
     <p class="credit">&copy; 2026 Koushik HY. All rights reserved. | Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/koushik-hy-3740a125b" target="_blank" rel="noopener noreferrer">Koushik HY</a></p>
   </section>
-  <!-- footer section ends -->
 
-  <!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
-  <!-- Three.js -->
-  <!-- jquery cdn -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <!-- vanilla tilt.js links -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-  <!-- imagesloaded plugin cdn -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js"></script>
-  <!-- isotope filter plugin cdn -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
-
-  <!-- Main script for this page -->
   <script src="./script.js"></script>
-
 </body>
-
 </html>
