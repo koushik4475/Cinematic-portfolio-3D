@@ -376,7 +376,7 @@ function showSkills(skills) {
 function safeProjectUrl(value) {
     try {
         const url = new URL(value);
-        return ['https:', 'http:'].includes(url.protocol) ? url.href.replace(/\\.git$/, '') : '';
+        return ['https:', 'http:'].includes(url.protocol) ? url.href.replace(/\.git$/, '') : '';
     } catch {
         return '';
     }
