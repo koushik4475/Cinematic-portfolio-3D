@@ -258,14 +258,3 @@ document.onkeydown = function(e) {
   }
 }
 
-document.addEventListener('visibilitychange',
-function(){
-    if(document.visibilityState === "visible"){
-        document.title = "Experience | Portfolio KOUSHIK HY";
-        $("#favicon").attr("href","/assets/images/favicon.png");
-    }
-    else {
-        document.title = "TQSM FOR VISITING ";
-        $("#favicon").attr("href","/assets/images/favhand.png");
-    }
-});
