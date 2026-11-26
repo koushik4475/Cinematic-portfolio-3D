@@ -490,12 +490,18 @@ document.addEventListener('DOMContentLoaded', () => {
    ============================================ */
 var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 var tawkLoaded = false, tawkOpenPending = false;
-(function () {
-    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-    s1.async = true; s1.src = 'https://embed.tawk.to/65956f8e8d261e1b5f4ec1ab/1hj7rnibr';
-    s1.charset = 'UTF-8'; s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-})();
+var tawkLoading = false;
+function loadTawk() {
+    if (tawkLoading || tawkLoaded) return;
+    tawkLoading = true;
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = 'https://embed.tawk.to/65956f8e8d261e1b5f4ec1ab/1hj7rnibr';
+    script.charset = 'UTF-8';
+    script.setAttribute('crossorigin', '*');
+    script.onerror = function () { tawkLoading = false; tawkOpenPending = false; };
+    document.head.appendChild(script);
+}
 
 // Force hide Tawk.to bubble via CSS as a robust backup
 (function() {
@@ -556,6 +562,7 @@ document.getElementById('master-robot-orb').addEventListener('click', () => {
     if (!tawkLoaded) {
         // Clicked before the Tawk script finished loading — open it from onLoad.
         tawkOpenPending = true;
+        loadTawk();
         return;
     }
     if (typeof Tawk_API.isChatMaximized === 'function' && Tawk_API.isChatMaximized()) {
