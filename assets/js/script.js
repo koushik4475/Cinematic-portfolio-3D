@@ -383,7 +383,9 @@ function showProjects(projects) {
     orderedProjects.forEach(project => {
         const ext = project.imageExt || 'png';
         const imagePath = `/assets/images/projects/${project.image}.${ext}`;
-        let imageUrl = `/.netlify/images?url=${encodeURIComponent(imagePath)}&w=720&fm=webp&q=76`;
+        let imageUrl = ext.toLowerCase() === 'svg'
+            ? imagePath
+            : `/.netlify/images?url=${encodeURIComponent(imagePath)}&w=720&fm=webp&q=76`;
         // Allow the verified PageClock app icon as a hosted project thumbnail.
         if (project.imageUrl) {
             try {

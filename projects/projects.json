@@ -2,9 +2,8 @@
   {
     "name": "PageClock — Reading & Focus Tracker",
     "desc": "An offline-first reading and focus tracker built with Flutter, Riverpod, Drift (SQLite) and fl_chart. Track reading sessions, run Pomodoro focus timers, review study analytics, personalize clock themes, and export PDF, CSV or JSON reports. Native mobile use stays local; web cloud sync is optional.",
-    "image": "pageclock",
-    "imageExt": "png",
-    "imageUrl": "https://pageclock.pages.dev/icons/Icon-512.png",
+    "image": "pageclock-preview",
+    "imageExt": "svg",
     "category": "web app",
     "links": {
       "view": "https://pageclock.pages.dev/",
