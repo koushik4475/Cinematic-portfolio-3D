@@ -17,7 +17,7 @@
     "category": "web",
     "links": {
       "view": "https://gooindia.netlify.app",
-      "code": "https://github.com/koushik4475/gooindia-.git"
+      "code": "https://github.com/koushik4475/gooindia-"
     }
   },
   {
@@ -26,8 +26,8 @@
     "image": "android-cipher-app-screenshot",
     "category": "app",
     "links": {
-      "view": "https://github.com/koushik4475/android-cipher?tab=readme-ov-file",
-      "code": "https://github.com/koushik4475/android-cipher.git"
+      "view": null,
+      "code": "https://github.com/koushik4475/android-cipher"
     }
   },
   {
@@ -36,8 +36,8 @@
     "image": "dynamic-showcase-portfolio-screenshot",
     "category": "web",
     "links": {
-      "view": "https://koushikhy.netlify.app",
-      "code": ""
+      "view": null,
+      "code": null
     }
   },
   {
@@ -46,8 +46,8 @@
     "image": "focus-guard-ai-project-screenshot",
     "category": "AI&ML",
     "links": {
-      "view": "https://github.com/koushik4475/focus-guard-.git",
-      "code": "https://github.com/koushik4475/focus-guard-.git"
+      "view": null,
+      "code": "https://github.com/koushik4475/focus-guard-"
     }
   },
   {
@@ -56,8 +56,8 @@
     "image": "alarm-clock-android-app-screenshot",
     "category": "app",
     "links": {
-      "view": "https://github.com/koushik4475/ALARM-HY_KOUSHIK.git",
-      "code": "https://github.com/koushik4475/ALARM-HY_KOUSHIK.git"
+      "view": null,
+      "code": "https://github.com/koushik4475/ALARM-HY_KOUSHIK"
     }
   },
   {
@@ -66,8 +66,8 @@
     "image": "todo-app-kotlin-screenshot",
     "category": "to-do",
     "links": {
-      "view": "https://github.com/koushik4475/TO-DO-APPLICATION-HY_KOUSHIK.git",
-      "code": "https://github.com/koushik4475/TO-DO-APPLICATION-HY_KOUSHIK.git"
+      "view": null,
+      "code": "https://github.com/koushik4475/TO-DO-APPLICATION-HY_KOUSHIK"
     }
   },
   {
@@ -77,7 +77,7 @@
     "category": "application",
     "links": {
       "view": "https://hykoushik.netlify.app",
-      "code": "https://github.com/koushik4475/interactive-visiting-card-.git"
+      "code": "https://github.com/koushik4475/interactive-visiting-card-"
     }
   },
   {
@@ -86,8 +86,8 @@
     "image": "smart-city-waste-management-screenshot",
     "category": "web",
     "links": {
-      "view": "",
-      "code": "https://github.com/koushik4475/focus-guard-.git"
+      "view": null,
+      "code": null
     }
   },
   {
@@ -97,7 +97,7 @@
     "category": "web",
     "links": {
       "view": "https://cybercal.netlify.app",
-      "code": "https://github.com/koushik4475/calculator.git"
+      "code": "https://github.com/koushik4475/calculator"
     }
   }
 ]
