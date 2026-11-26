@@ -112,14 +112,6 @@ $(document).ready(function () {
     })();
 });
 
-document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === "visible") {
-        document.title = "Projects | Portfolio KOUSHIK HY";
-    } else {
-        document.title = "Thank you 😊";
-    }
-});
-
 function initPortfolioGrid() {
     if (window.innerWidth > 768) {
         VanillaTilt.init(document.querySelectorAll(".tilt"), {
