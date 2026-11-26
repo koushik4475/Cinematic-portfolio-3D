@@ -122,18 +122,18 @@ function initPortfolioGrid() {
         });
     }
 
-    $('.box-container').imagesLoaded(function () {
-        var $grid = $('.box-container').isotope({
-            itemSelector: '.grid-item',
-            layoutMode: 'fitRows',
-        });
+    // Card media containers reserve their height in CSS, so Isotope can
+    // calculate the grid immediately instead of waiting for every image.
+    var $grid = $('.box-container').isotope({
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows',
+    });
 
-        $('.button-group').on('click', 'button', function () {
-            $('.button-group').find('.is-checked').removeClass('is-checked');
-            $(this).addClass('is-checked');
-            const filterValue = $(this).attr('data-filter');
-            $grid.isotope({ filter: filterValue });
-        });
+    $('.button-group').on('click', 'button', function () {
+        $('.button-group').find('.is-checked').removeClass('is-checked');
+        $(this).addClass('is-checked');
+        const filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
     });
 }
 
