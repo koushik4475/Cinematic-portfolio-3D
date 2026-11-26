@@ -559,3 +559,146 @@ header .navbar ul li a.active {
     filter: none;
   }
 }
+
+
+/* PageClock card: always show the real app icon and readable content.
+   Keep this override last so older hover/overlay rules cannot hide it. */
+.work .box-container .pageclock-card {
+  height: auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: none;
+  cursor: default;
+}
+
+.work .box-container .pageclock-card:hover {
+  transform: none;
+}
+
+.work .box-container .pageclock-card .image {
+  width: 100%;
+  height: 25rem;
+  min-height: 25rem;
+  flex: 0 0 25rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(0, 229, 255, 0.16), transparent 58%),
+    #080b10;
+}
+
+.work .box-container .pageclock-card .image img,
+.work .box-container .pageclock-card .image .pageclock-app-icon {
+  display: block;
+  width: 21rem;
+  height: 21rem;
+  max-width: 100%;
+  max-height: 100%;
+  flex: 0 0 auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  object-position: center;
+  padding: 0;
+  margin: 0 auto;
+  opacity: 1;
+  visibility: visible;
+  filter: none;
+  border-radius: 2.8rem;
+  transition: none;
+}
+
+.work .box-container .pageclock-card:hover .image img {
+  transform: none;
+  filter: none;
+}
+
+.work .box-container .pageclock-card .content {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  padding: 2.2rem;
+  transform: none;
+  flex: 1 1 auto;
+  background: linear-gradient(180deg, rgba(8, 8, 8, 0.98), #050505);
+}
+
+.work .box-container .pageclock-card:hover .content {
+  transform: none;
+}
+
+.work .box-container .pageclock-card h2 {
+  font-size: clamp(2rem, 2.2vw, 2.5rem);
+  line-height: 1.25;
+  overflow-wrap: normal;
+  word-break: normal;
+  margin: 0 0 1.2rem;
+}
+
+.work .box-container .pageclock-card .desc {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.work .box-container .pageclock-card .desc p {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  margin-bottom: 1.8rem;
+}
+
+.work .box-container .pageclock-card .btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.work .box-container .pageclock-card .btns .btn {
+  flex: 0 1 auto;
+  min-width: 11rem;
+}
+
+@media (max-width: 768px) {
+  .work .box-container .pageclock-card {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    transform: none !important;
+  }
+
+  .work .box-container .pageclock-card .image {
+    height: 22rem;
+    min-height: 22rem;
+    flex: 0 0 22rem;
+    padding: 1.5rem;
+  }
+
+  .work .box-container .pageclock-card .image img,
+  .work .box-container .pageclock-card .image .pageclock-app-icon {
+    width: 18rem;
+    height: 18rem;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    padding: 0;
+  }
+
+  .work .box-container .pageclock-card .content {
+    padding: 1.8rem;
+  }
+
+  .work .box-container .pageclock-card h2 {
+    font-size: clamp(2rem, 5.2vw, 2.4rem);
+    line-height: 1.3;
+  }
+
+  .work .box-container .pageclock-card .btns .btn {
+    flex: 1 1 12rem;
+  }
+}
