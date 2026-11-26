@@ -406,6 +406,8 @@ header .navbar ul li a:hover{
   color: #77ff00;
   text-decoration: underline;
   text-underline-offset: 0.2em;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 .footer .fa{
     color: #E90606;
