@@ -82,6 +82,7 @@ $(document).ready(function () {
         });
 
         function animate() {
+            if (document.hidden) return;
             requestAnimationFrame(animate);
 
             // Per-layer movement
@@ -106,6 +107,7 @@ $(document).ready(function () {
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
 
+        document.addEventListener('visibilitychange', () => { if (!document.hidden) animate(); });
         animate();
     })();
 });
