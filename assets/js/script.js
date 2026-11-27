@@ -222,7 +222,7 @@
    MOUSE 3D TILT — Interactive Cards
    ============================================ */
 function init3DTilt() {
-    document.querySelectorAll('.work .box-container .box, .education .box-container .box').forEach(card => {
+    document.querySelectorAll('.education .box-container .box').forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = (e.clientX - rect.left) / rect.width - 0.5;
