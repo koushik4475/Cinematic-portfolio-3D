@@ -2794,3 +2794,76 @@ body.tawk-chat-open .robo-pet {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Project card accessibility: text and actions must never depend on hover.
+   Keep the cinematic hover elevation while allowing long titles to wrap. */
+.work .box-container .box {
+  height: auto;
+  min-height: 40rem;
+  overflow: visible;
+  transform-style: flat;
+}
+.work .box-container .box .image {
+  height: 24rem;
+  min-height: 24rem;
+  flex: 0 0 24rem;
+  overflow: hidden;
+  border-radius: 2rem 2rem 0 0;
+}
+.work .box-container .box .content {
+  position: relative;
+  inset: auto;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 2.2rem;
+  background: linear-gradient(180deg, rgba(12, 15, 21, .98), rgba(5, 5, 5, .98));
+  transform: none;
+  border-radius: 0 0 2rem 2rem;
+}
+.work .box-container .box:hover .content {
+  transform: none;
+}
+.work .box-container .box .content .tag h3 {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  font-size: clamp(1.9rem, 1.8vw, 2.2rem);
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+.work .box-container .box .content .tag h3::before {
+  margin-top: .35rem;
+  flex-shrink: 0;
+}
+.work .box-container .box .desc,
+.work .box-container .box:hover .desc {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.work .box-container .box .desc p {
+  overflow-wrap: anywhere;
+}
+.work .box-container .box .desc .btns .btn {
+  min-height: 4.4rem;
+  text-align: center;
+}
+@media (hover: none), (pointer: coarse) {
+  .work .box-container .box,
+  .work .box-container .box:hover {
+    transform: none !important;
+  }
+  .work .box-container .box:hover img {
+    transform: none;
+    filter: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work .box-container .box,
+  .work .box-container .box .content,
+  .work .box-container .box .desc {
+    transition: none;
+  }
+}
